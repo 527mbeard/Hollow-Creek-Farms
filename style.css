@@ -1,5 +1,4 @@
 css
-
 /* ============================================
    HOLLOW CREEK FARM — style.css
    ============================================ */
@@ -23,20 +22,77 @@ css
   --bg-tan: #C9A84C;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Lato', sans-serif;
   background: var(--cream-warm);
   color: var(--text-dark);
   overflow-x: hidden;
+  cursor: none;
 }
 
-img { display: block; width: 100%; height: 100%; object-fit: cover; }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
+/* CUSTOM CURSOR */
+.cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--green-dark);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease,
+    width 0.3s ease,
+    height 0.3s ease,
+    background 0.3s ease;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--green-dark);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.18s ease,
+    width 0.3s ease,
+    height 0.3s ease,
+    opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+body:hover .cursor {
+  opacity: 1;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
 
 /* ============================================
    NAVBAR
@@ -50,8 +106,8 @@ ul { list-style: none; }
   gap: 2rem;
   padding: 0.8rem 2.5rem;
   background: var(--cream-warm);
-  border-bottom: 1px solid rgba(201,149,42,0.25);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(201, 149, 42, 0.25);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .nav-logo {
@@ -116,7 +172,9 @@ ul { list-style: none; }
   width: 100%;
 }
 
-.nav-links a.active { color: var(--text-dark); }
+.nav-links a.active {
+  color: var(--text-dark);
+}
 
 .btn-plan {
   background: var(--green-dark);
@@ -132,7 +190,9 @@ ul { list-style: none; }
   white-space: nowrap;
 }
 
-.btn-plan:hover { background: var(--green-mid); }
+.btn-plan:hover {
+  background: var(--green-mid);
+}
 
 .hamburger {
   display: none;
@@ -217,7 +277,9 @@ ul { list-style: none; }
   transition: background 0.2s;
 }
 
-.btn-primary:hover { background: var(--green-mid); }
+.btn-primary:hover {
+  background: var(--green-mid);
+}
 
 .btn-text {
   font-family: 'Lato', sans-serif;
@@ -232,9 +294,17 @@ ul { list-style: none; }
   transition: color 0.2s;
 }
 
-.btn-text:hover { color: var(--green-dark); }
-.arrow { transition: transform 0.2s; }
-.btn-text:hover .arrow { transform: translateX(4px); }
+.btn-text:hover {
+  color: var(--green-dark);
+}
+
+.arrow {
+  transition: transform 0.2s;
+}
+
+.btn-text:hover .arrow {
+  transform: translateX(4px);
+}
 
 .hero-image {
   overflow: hidden;
@@ -275,8 +345,13 @@ ul { list-style: none; }
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ============================================
@@ -310,9 +385,17 @@ ul { list-style: none; }
   line-height: 1.15;
 }
 
-.section-title.dark { color: var(--white); }
-.section-title.light { color: var(--text-dark); }
-.section-title.center { text-align: center; }
+.section-title.dark {
+  color: var(--white);
+}
+
+.section-title.light {
+  color: var(--text-dark);
+}
+
+.section-title.center {
+  text-align: center;
+}
 
 .section-title.dark {
   background: var(--green-dark);
@@ -391,7 +474,9 @@ ul { list-style: none; }
   transition: color 0.2s;
 }
 
-.visit-cal-link:hover { color: var(--green-dark); }
+.visit-cal-link:hover {
+  color: var(--green-dark);
+}
 
 .season-tabs {
   display: flex;
@@ -415,7 +500,8 @@ ul { list-style: none; }
   transition: background 0.2s, color 0.2s;
 }
 
-.tab-btn.active, .tab-btn:hover {
+.tab-btn.active,
+.tab-btn:hover {
   background: var(--green-dark);
   color: var(--white);
 }
@@ -430,11 +516,13 @@ ul { list-style: none; }
 .event-card {
   padding: 2rem;
   background: var(--cream-warm);
-  border-right: 1px solid rgba(201,149,42,0.3);
+  border-right: 1px solid rgba(201, 149, 42, 0.3);
   transition: background 0.2s;
 }
 
-.event-card:last-child { border-right: none; }
+.event-card:last-child {
+  border-right: none;
+}
 
 .event-card.featured {
   background: var(--red-dark);
@@ -497,7 +585,9 @@ ul { list-style: none; }
 }
 
 /* hide events by season filter */
-.event-card.hidden { display: none; }
+.event-card.hidden {
+  display: none;
+}
 
 /* ============================================
    OUR STORY PREVIEW (HOME)
@@ -562,7 +652,7 @@ ul { list-style: none; }
   gap: 2.5rem;
   margin-top: 1rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(201,149,42,0.3);
+  border-top: 1px solid rgba(201, 149, 42, 0.3);
 }
 
 .stat {
@@ -598,7 +688,10 @@ ul { list-style: none; }
   overflow: hidden;
 }
 
-.fresh-section .section-title { color: var(--cream); margin-bottom: 2.5rem; }
+.fresh-section .section-title {
+  color: var(--cream);
+  margin-bottom: 2.5rem;
+}
 
 .fresh-carousel-wrapper {
   position: relative;
@@ -622,7 +715,9 @@ ul { list-style: none; }
   transition: transform 0.25s;
 }
 
-.fresh-card:hover { transform: translateY(-4px); }
+.fresh-card:hover {
+  transform: translateY(-4px);
+}
 
 .fresh-img {
   height: 200px;
@@ -656,7 +751,9 @@ ul { list-style: none; }
   transition: color 0.2s;
 }
 
-.learn-link:hover { color: var(--red-dark); }
+.learn-link:hover {
+  color: var(--red-dark);
+}
 
 .carousel-btn {
   background: var(--gold);
@@ -674,7 +771,9 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
-.carousel-btn:hover { background: var(--tan); }
+.carousel-btn:hover {
+  background: var(--tan);
+}
 
 /* ============================================
    FOOTER
@@ -712,10 +811,11 @@ ul { list-style: none; }
   margin-bottom: 0.4rem;
 }
 
-.footer-info p, .footer-contact-info p {
+.footer-info p,
+.footer-contact-info p {
   font-size: 0.85rem;
   line-height: 1.7;
-  color: rgba(245,240,232,0.85);
+  color: rgba(245, 240, 232, 0.85);
 }
 
 .footer-right {
@@ -742,7 +842,9 @@ ul { list-style: none; }
   outline: none;
 }
 
-.footer-email::placeholder { color: rgba(245,240,232,0.5); }
+.footer-email::placeholder {
+  color: rgba(245, 240, 232, 0.5);
+}
 
 .footer-contact-btn {
   padding: 0.7rem 1.4rem;
@@ -759,11 +861,14 @@ ul { list-style: none; }
   transition: background 0.2s;
 }
 
-.footer-contact-btn:hover { background: var(--gold); color: var(--green-dark); }
+.footer-contact-btn:hover {
+  background: var(--gold);
+  color: var(--green-dark);
+}
 
 .footer-social {
   font-size: 0.82rem;
-  color: rgba(245,240,232,0.75);
+  color: rgba(245, 240, 232, 0.75);
 }
 
 /* ============================================
@@ -782,7 +887,7 @@ ul { list-style: none; }
 .about-hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, var(--cream-warm) 0%, rgba(201,149,42,0.08) 100%);
+  background: linear-gradient(160deg, var(--cream-warm) 0%, rgba(201, 149, 42, 0.08) 100%);
 }
 
 .about-hero-content {
@@ -818,7 +923,9 @@ ul { list-style: none; }
   overflow: hidden;
 }
 
-.about-img-wrap img { object-fit: cover; }
+.about-img-wrap img {
+  object-fit: cover;
+}
 
 .about-text-section {
   background: var(--cream-warm);
@@ -843,7 +950,9 @@ ul { list-style: none; }
   padding: 4rem;
 }
 
-.family-section .section-title { margin-bottom: 2.5rem; }
+.family-section .section-title {
+  margin-bottom: 2.5rem;
+}
 
 .family-grid {
   display: grid;
@@ -866,7 +975,9 @@ ul { list-style: none; }
   transition: filter 0.3s;
 }
 
-.family-card:hover img { filter: sepia(0); }
+.family-card:hover img {
+  filter: sepia(0);
+}
 
 .family-info {
   padding: 0.9rem 1rem;
@@ -925,7 +1036,9 @@ ul { list-style: none; }
   transition: background 0.2s;
 }
 
-.cal-arrow:hover { background: var(--green-mid); }
+.cal-arrow:hover {
+  background: var(--green-mid);
+}
 
 .cal-month-label {
   font-family: 'Playfair Display', serif;
@@ -962,10 +1075,12 @@ ul { list-style: none; }
   color: var(--white);
   text-align: center;
   padding: 0.9rem 0.5rem;
-  border-right: 1px solid rgba(255,255,255,0.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.cal-day-header:last-child { border-right: none; }
+.cal-day-header:last-child {
+  border-right: none;
+}
 
 .calendar-body {
   display: grid;
@@ -980,8 +1095,13 @@ ul { list-style: none; }
   position: relative;
 }
 
-.cal-cell:nth-child(7n) { border-right: none; }
-.cal-cell.empty { background: rgba(0,0,0,0.02); }
+.cal-cell:nth-child(7n) {
+  border-right: none;
+}
+
+.cal-cell.empty {
+  background: rgba(0, 0, 0, 0.02);
+}
 
 .cal-date {
   font-family: 'Lato', sans-serif;
@@ -1009,7 +1129,9 @@ ul { list-style: none; }
   padding: 4rem;
 }
 
-.events-list-section .section-title { margin-bottom: 2.5rem; }
+.events-list-section .section-title {
+  margin-bottom: 2.5rem;
+}
 
 .events-list {
   max-width: 780px;
@@ -1023,12 +1145,17 @@ ul { list-style: none; }
   display: flex;
   gap: 2rem;
   padding: 1.8rem 0;
-  border-bottom: 1px solid rgba(201,149,42,0.3);
+  border-bottom: 1px solid rgba(201, 149, 42, 0.3);
   transition: background 0.15s;
 }
 
-.event-list-item:hover { background: rgba(201,149,42,0.05); }
-.event-list-item:first-child { border-top: 1px solid rgba(201,149,42,0.3); }
+.event-list-item:hover {
+  background: rgba(201, 149, 42, 0.05);
+}
+
+.event-list-item:first-child {
+  border-top: 1px solid rgba(201, 149, 42, 0.3);
+}
 
 .event-list-date {
   flex-shrink: 0;
@@ -1086,10 +1213,25 @@ ul { list-style: none; }
   display: inline-block;
 }
 
-.event-tag.autumn { background: rgba(139,32,32,0.12); color: var(--red-dark); }
-.event-tag.winter { background: rgba(45,80,22,0.12); color: var(--green-dark); }
-.event-tag.spring { background: rgba(201,149,42,0.15); color: var(--gold); }
-.event-tag.summer { background: rgba(212,168,83,0.2); color: #8B6010; }
+.event-tag.autumn {
+  background: rgba(139, 32, 32, 0.12);
+  color: var(--red-dark);
+}
+
+.event-tag.winter {
+  background: rgba(45, 80, 22, 0.12);
+  color: var(--green-dark);
+}
+
+.event-tag.spring {
+  background: rgba(201, 149, 42, 0.15);
+  color: var(--gold);
+}
+
+.event-tag.summer {
+  background: rgba(212, 168, 83, 0.2);
+  color: #8B6010;
+}
 
 /* ============================================
    SHOP PAGE
@@ -1106,15 +1248,11 @@ ul { list-style: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(201,149,42,0.7);
-  background-image: repeating-linear-gradient(
-    0deg, transparent, transparent 40px,
-    rgba(255,255,255,0.08) 40px, rgba(255,255,255,0.08) 42px
-  ),
-  repeating-linear-gradient(
-    90deg, transparent, transparent 40px,
-    rgba(255,255,255,0.08) 40px, rgba(255,255,255,0.08) 42px
-  );
+  background: rgba(201, 149, 42, 0.7);
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 40px,
+      rgba(255, 255, 255, 0.08) 40px, rgba(255, 255, 255, 0.08) 42px),
+    repeating-linear-gradient(90deg, transparent, transparent 40px,
+      rgba(255, 255, 255, 0.08) 40px, rgba(255, 255, 255, 0.08) 42px);
 }
 
 .shop-hero-inner {
@@ -1159,8 +1297,14 @@ ul { list-style: none; }
   transition: background 0.2s, transform 0.15s;
 }
 
-.season-filter-btn:hover { background: var(--red-mid); transform: scale(1.02); }
-.season-filter-btn.active { background: var(--green-dark); }
+.season-filter-btn:hover {
+  background: var(--red-mid);
+  transform: scale(1.02);
+}
+
+.season-filter-btn.active {
+  background: var(--green-dark);
+}
 
 .shop-products {
   background: var(--cream-warm);
@@ -1184,10 +1328,12 @@ ul { list-style: none; }
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-.product-card.hidden { display: none; }
+.product-card.hidden {
+  display: none;
+}
 
 .product-img {
   height: 180px;
@@ -1272,16 +1418,18 @@ ul { list-style: none; }
   font-size: 0.82rem;
   padding: 0.6rem 0.8rem;
   color: var(--text-dark);
-  border-bottom: 1px solid rgba(201,149,42,0.2);
+  border-bottom: 1px solid rgba(201, 149, 42, 0.2);
   vertical-align: top;
 }
 
-.hours-table tr:last-child td { border-bottom: none; }
+.hours-table tr:last-child td {
+  border-bottom: none;
+}
 
 .hours-table td:first-child {
   font-weight: 700;
   white-space: nowrap;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .contact-details-box h3 {
@@ -1300,7 +1448,7 @@ ul { list-style: none; }
 
 .contact-social-text {
   margin-top: 0.8rem;
-  color: rgba(245,240,232,0.8) !important;
+  color: rgba(245, 240, 232, 0.8) !important;
 }
 
 .contact-right {
@@ -1343,10 +1491,18 @@ ul { list-style: none; }
   transition: background 0.2s;
 }
 
-.contact-input::placeholder { color: rgba(232,201,122,0.6); }
-.contact-input:focus { background: var(--green-mid); }
+.contact-input::placeholder {
+  color: rgba(232, 201, 122, 0.6);
+}
 
-.contact-textarea { resize: vertical; min-height: 120px; }
+.contact-input:focus {
+  background: var(--green-mid);
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
 
 .contact-submit-btn {
   background: var(--green-dark);
@@ -1366,7 +1522,9 @@ ul { list-style: none; }
   display: block;
 }
 
-.contact-submit-btn:hover { background: var(--green-mid); }
+.contact-submit-btn:hover {
+  background: var(--green-mid);
+}
 
 .contact-success {
   text-align: center;
@@ -1376,7 +1534,9 @@ ul { list-style: none; }
   display: none;
 }
 
-.contact-success.show { display: block; }
+.contact-success.show {
+  display: block;
+}
 
 .map-section {
   background: var(--red-dark);
@@ -1392,17 +1552,39 @@ ul { list-style: none; }
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
-  .fresh-grid { grid-template-columns: repeat(2, 1fr); }
-  .events-grid { grid-template-columns: 1fr 1fr; }
-  .event-card:last-child { display: none; }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fresh-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .event-card:last-child {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
-  .navbar { padding: 0.7rem 1.2rem; }
-  .nav-links { display: none; }
-  .btn-plan { display: none; }
-  .hamburger { display: flex; }
+  .navbar {
+    padding: 0.7rem 1.2rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .btn-plan {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 
   .nav-links.open {
     display: flex;
@@ -1414,58 +1596,163 @@ ul { list-style: none; }
     background: var(--cream-warm);
     padding: 1.5rem 2rem;
     gap: 1.2rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    border-top: 1px solid rgba(201,149,42,0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(201, 149, 42, 0.2);
   }
 
-  .hero { grid-template-columns: 1fr; }
-  .hero-image { height: 260px; }
-  .hero-content { padding: 2.5rem 1.5rem; }
+  .hero {
+    grid-template-columns: 1fr;
+  }
 
-  .season-menu { grid-template-columns: 1fr; }
-  .season-left { min-height: 250px; }
-  .season-right { padding: 2.5rem 1.5rem; }
+  .hero-image {
+    height: 260px;
+  }
 
-  .events-section { padding: 2.5rem 1.5rem; }
-  .events-grid { grid-template-columns: 1fr; }
-  .event-card:last-child { display: block; }
+  .hero-content {
+    padding: 2.5rem 1.5rem;
+  }
 
-  .story-preview { grid-template-columns: 1fr; }
-  .story-left { min-height: 250px; }
-  .story-right { padding: 2.5rem 1.5rem; }
+  .season-menu {
+    grid-template-columns: 1fr;
+  }
 
-  .fresh-section { padding: 2.5rem 1.5rem; }
-  .fresh-grid { grid-template-columns: 1fr; }
+  .season-left {
+    min-height: 250px;
+  }
 
-  .footer { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+  .season-right {
+    padding: 2.5rem 1.5rem;
+  }
 
-  .about-images-section { padding: 2rem 1.5rem 1.5rem; }
-  .about-images-grid { grid-template-columns: 1fr; }
-  .about-img-wrap { height: 220px; }
-  .about-text-section { padding: 1.5rem 1.5rem 2.5rem; }
-  .family-section { padding: 2.5rem 1.5rem; }
-  .family-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .events-section {
+    padding: 2.5rem 1.5rem;
+  }
 
-  .cal-hero { padding: 2rem 1.5rem 1.5rem; }
-  .calendar-section { padding: 0 1.5rem 2.5rem; }
-  .cal-day-header { font-size: 0.6rem; padding: 0.6rem 2px; }
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .events-list-section { padding: 2.5rem 1.5rem; }
+  .event-card:last-child {
+    display: block;
+  }
 
-  .shop-hero { padding: 2rem 1.5rem; }
-  .shop-hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-  .shop-season-buttons { grid-template-columns: 1fr 1fr; }
-  .shop-products { padding: 2.5rem 1.5rem; }
-  .products-grid { grid-template-columns: 1fr 1fr; }
+  .story-preview {
+    grid-template-columns: 1fr;
+  }
 
-  .contact-hero { padding: 3rem 1.5rem; }
-  .contact-body { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 2rem; }
-  .map-section { padding: 0 1.5rem 2.5rem; }
+  .story-left {
+    min-height: 250px;
+  }
+
+  .story-right {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .fresh-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .fresh-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .about-images-section {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .about-images-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-img-wrap {
+    height: 220px;
+  }
+
+  .about-text-section {
+    padding: 1.5rem 1.5rem 2.5rem;
+  }
+
+  .family-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .family-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .cal-hero {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .calendar-section {
+    padding: 0 1.5rem 2.5rem;
+  }
+
+  .cal-day-header {
+    font-size: 0.6rem;
+    padding: 0.6rem 2px;
+  }
+
+  .events-list-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .shop-hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .shop-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .shop-season-buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .shop-products {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-body {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .map-section {
+    padding: 0 1.5rem 2.5rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .products-grid { grid-template-columns: 1fr; }
-  .family-grid { grid-template-columns: 1fr; }
-  .stats-row { gap: 1.5rem; }
-  .shop-season-buttons { grid-template-columns: 1fr; }
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .family-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-row {
+    gap: 1.5rem;
+  }
+
+  .shop-season-buttons {
+    grid-template-columns: 1fr;
+  }
 }
