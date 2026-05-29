@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop – Hollow Creek Farm</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-circle">
+        <span class="logo-letters">HC</span>
+        <div class="logo-ring"></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn-plan">Plan a Visit</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- SHOP HERO -->
+  <section class="shop-hero">
+    <div class="shop-hero-inner">
+      <div class="shop-hero-title-box">
+        <h1>Seasonal<br/>Menu</h1>
+      </div>
+      <div class="shop-season-buttons">
+        <button class="season-filter-btn active" data-filter="all">All</button>
+        <button class="season-filter-btn" data-filter="spring">Spring</button>
+        <button class="season-filter-btn" data-filter="summer">Summer</button>
+        <button class="season-filter-btn" data-filter="autumn">Autumn</button>
+        <button class="season-filter-btn" data-filter="winter">Winter</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS GRID -->
+  <section class="shop-products">
+    <div class="products-grid" id="productsGrid">
+
+      <div class="product-card" data-season="all spring summer autumn winter">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=400&q=80" alt="Fresh Eggs" />
+        </div>
+        <h3>Fresh Eggs</h3>
+        <p>Free-range eggs from our pasture-raised hens. Available year-round at the farm store.</p>
+        <a href="#" class="learn-link">Learn More →</a>
+      </div>
+
+      <div class="product-card" data-season="all spring summer autumn winter">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400&q=80" alt="Raw Honey" />
+        </div>
+        <h3>Raw Honey</h3>
+        <p>Wildflower honey harvested from our own hives. Unfiltered, unpasteurized, and endlessly versatile.</p>
+        <a href="#" class="learn-link">Learn More →</a>
+      </div>
+
+      <div class="product-card" data-season="all autumn winter">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=400&q=80" alt="Apple Pie" />
+        </div>
+        <h3>Apple Pie</h3>
+        <p>Baked fresh daily during apple season. Classic lattice crust, orchard-fresh filling.</p>
+        <a href="#" class="learn-link">Learn More →</a>
+      </div>
+
+      <div class="product-card" data-season="all autumn">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1601004890657-b8a9bab1e95d?w=400&q=80" alt="Pumpkins" />
+        </div>
+        <h3>Heirloom Pumpkins</h3>
+        <p>A gorgeous selection of heirloom and decorative varieties grown in our own patch.</p>
+        <a href="#" class="learn-link">Learn More →</a>
+      </div>
+
+      <div class="product-card" data-season="all summer">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&q=80" alt="Sunflower Bouquets" />
+        </div>
+        <h3>Sunflower Bouquets</h3>
+        <p>Cut-your-own or pre-made bouquets from our sunflower fields in full bloom each July.</p>
+        <a href="#" class="learn-link">Learn More →</a>
+      </div>
+
+      <div class="product-card" data-season="all spring summer">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1574226516831-e1dff420e562?w=400&q=80" alt="Fresh Vegetables" />
+        </div>
+        <h3>Fresh Vegetables</h3>
+        <p>Seasonal vegetables harvested at peak freshness: tomatoes, zucchini, beans, and more.</p>
+        <a href="#" class="learn-link">Learn More →</a>
+      </div>
+
+      <div class="product-card" data-season="all autumn winter">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&q=80" alt="Apple Cider" />
+        </div>
+        <h3>Fresh Apple Cider</h3>
+        <p>Pressed on-site from our orchard harvest. Unpasteurized and available through November.</p>
+        <a href="#" class="learn-link">Learn More →</a>
+      </div>
+
+      <div class="product-card" data-season="all winter">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&q=80" alt="Holiday Wreaths" />
+        </div>
+        <h3>Holiday Wreaths</h3>
+        <p>Hand-crafted wreaths from locally sourced greenery, pinecones, and dried botanicals.</p>
+        <a href="#" class="learn-link">Learn More →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      <h2 class="footer-tagline">Never miss<br/>What's <em>in season</em></h2>
+      <div class="footer-info">
+        <p class="footer-label">Market Hours</p>
+        <p>Tue to Sat: 9am to 5pm | Sun: 10am to 3pm</p>
+        <p>1482 Hollow Creek Road,<br/>Morristown, New Jersey, 07960</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-contact-info">
+        <p class="footer-label">Contact Us</p>
+        <p>(555) 847-2210</p>
+        <p>hello@hollowcreekfarm.com</p>
+      </div>
+      <div class="footer-newsletter">
+        <input type="email" placeholder="Your Email Address" class="footer-email" />
+        <button class="footer-contact-btn">Contact</button>
+      </div>
+      <p class="footer-social">Follow Us on Instagram, TikTok &amp; Facebook: <strong>@HollowCreekFarm</strong></p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

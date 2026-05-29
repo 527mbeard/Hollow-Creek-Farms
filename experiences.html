@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiences – Hollow Creek Farm</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-circle">
+        <span class="logo-letters">HC</span>
+        <div class="logo-ring"></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experiences.html" class="active">Experiences</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn-plan">Plan a Visit</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- CALENDAR HEADER -->
+  <section class="cal-hero">
+    <h1 class="cal-title">Calendar</h1>
+    <div class="cal-nav-bar">
+      <button class="cal-arrow" id="calPrev">&#8592;</button>
+      <span class="cal-month-label" id="calMonthLabel"></span>
+      <button class="cal-arrow" id="calNext">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- CALENDAR GRID -->
+  <section class="calendar-section">
+    <div class="calendar-wrapper">
+      <div class="calendar-header-row">
+        <div class="cal-day-header">Monday</div>
+        <div class="cal-day-header">Tuesday</div>
+        <div class="cal-day-header">Wednesday</div>
+        <div class="cal-day-header">Thursday</div>
+        <div class="cal-day-header">Friday</div>
+        <div class="cal-day-header">Saturday</div>
+        <div class="cal-day-header">Sunday</div>
+      </div>
+      <div class="calendar-body" id="calendarBody"></div>
+    </div>
+  </section>
+
+  <!-- EVENTS LIST -->
+  <section class="events-list-section">
+    <h2 class="section-title light center">All Events</h2>
+    <div class="events-list" id="eventsList">
+      <div class="event-list-item">
+        <div class="event-list-date">
+          <span class="eli-month">OCT</span>
+          <span class="eli-day">12</span>
+        </div>
+        <div class="event-list-details">
+          <h3>Harvest Festival</h3>
+          <p>A full day of apple picking, hayrides, live bluegrass music, and the annual pumpkin carving contest. Kids and families welcome. Tickets available at the gate.</p>
+          <span class="event-tag autumn">Autumn</span>
+        </div>
+      </div>
+      <div class="event-list-item">
+        <div class="event-list-date">
+          <span class="eli-month">OCT</span>
+          <span class="eli-day">19</span>
+        </div>
+        <div class="event-list-details">
+          <h3>Corn Maze Opens</h3>
+          <p>Our famous 5-acre corn maze returns! Navigate the seasonal design and earn a free cider at the end. Open weekends through November.</p>
+          <span class="event-tag autumn">Autumn</span>
+        </div>
+      </div>
+      <div class="event-list-item">
+        <div class="event-list-date">
+          <span class="eli-month">NOV</span>
+          <span class="eli-day">1</span>
+        </div>
+        <div class="event-list-details">
+          <h3>Apple Cider Pressing Workshop</h3>
+          <p>Learn the art of traditional cider pressing with our team. You'll take home a jug of fresh-pressed cider made from our own orchard.</p>
+          <span class="event-tag autumn">Autumn</span>
+        </div>
+      </div>
+      <div class="event-list-item">
+        <div class="event-list-date">
+          <span class="eli-month">DEC</span>
+          <span class="eli-day">6</span>
+        </div>
+        <div class="event-list-details">
+          <h3>Holiday Market</h3>
+          <p>Local artisans, wreaths, homemade pies, and warm apple cider in the restored 1890s barn. A holiday tradition for the whole family.</p>
+          <span class="event-tag winter">Winter</span>
+        </div>
+      </div>
+      <div class="event-list-item">
+        <div class="event-list-date">
+          <span class="eli-month">MAR</span>
+          <span class="eli-day">21</span>
+        </div>
+        <div class="event-list-details">
+          <h3>Spring Planting Day</h3>
+          <p>Get your hands in the dirt! Join our crew for a morning of seed starting, soil prep, and learning about what goes into a spring farm season.</p>
+          <span class="event-tag spring">Spring</span>
+        </div>
+      </div>
+      <div class="event-list-item">
+        <div class="event-list-date">
+          <span class="eli-month">JUL</span>
+          <span class="eli-day">4</span>
+        </div>
+        <div class="event-list-details">
+          <h3>Sunflower Festival</h3>
+          <p>The sunflower fields are in peak bloom — come explore, pick a bouquet, and enjoy live music in the meadow. Our most popular summer event.</p>
+          <span class="event-tag summer">Summer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      <h2 class="footer-tagline">Never miss<br/>What's <em>in season</em></h2>
+      <div class="footer-info">
+        <p class="footer-label">Market Hours</p>
+        <p>Tue to Sat: 9am to 5pm | Sun: 10am to 3pm</p>
+        <p>1482 Hollow Creek Road,<br/>Morristown, New Jersey, 07960</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-contact-info">
+        <p class="footer-label">Contact Us</p>
+        <p>(555) 847-2210</p>
+        <p>hello@hollowcreekfarm.com</p>
+      </div>
+      <div class="footer-newsletter">
+        <input type="email" placeholder="Your Email Address" class="footer-email" />
+        <button class="footer-contact-btn">Contact</button>
+      </div>
+      <p class="footer-social">Follow Us on Instagram, TikTok &amp; Facebook: <strong>@HollowCreekFarm</strong></p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
