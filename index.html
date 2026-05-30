@@ -5,244 +5,312 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hollow Creek Farm</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
-    rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+  <!-- NAVBAR -->
 
-  <!-- NAV -->
   <nav class="navbar">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-circle">
-        <span class="logo-letters">HC</span>
-        <div class="logo-ring"></div>
+    <div class="nav-container">
+
+      <div class="logo">
+        <div class="logo-circle">H</div>
       </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="experiences.html">Experiences</a></li>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="contact.html" class="btn-plan">Plan a Visit</a>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+
+      <ul class="nav-links">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">EXPERIENCES</a></li>
+        <li><a href="#">SHOP</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+
+      <button class="visit-btn">PLAN A VISIT</button>
+
+    </div>
   </nav>
 
   <!-- HERO -->
+
   <section class="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow">Family Owned Since 1962</p>
-      <h1 class="hero-title">Hollow Creek<br />Farm</h1>
-      <p class="hero-desc">Come experience the rhythms of the seasons, the taste of real food, and the warmth of a
-        working farm that's been part of this community for generations. From sunflower fields to farm-fresh markets,
-        there's always something growing here.</p>
+
+    <div class="hero-left fade-up">
+      <span>Family Owned Since 1962</span>
+
+      <h1>Hollow Creek Farm</h1>
+
+      <p>
+        Experience the charm of the countryside with seasonal produce,
+        handcrafted goods, fresh baked pies, and unforgettable farm
+        experiences for the whole family.
+      </p>
+
       <div class="hero-buttons">
-        <a href="about.html" class="btn-primary">Explore Our Farm</a>
-        <a href="shop.html" class="btn-text">Visit the Market <span class="arrow">→</span></a>
+        <a href="#" class="primary-btn">EXPLORE OUR FARM</a>
+        <a href="#" class="text-link">VISIT THE MARKET →</a>
       </div>
     </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80"
-        alt="Hollow Creek Farm sunflower field" />
-    </div>
+
+    <div class="hero-right"></div>
+
   </section>
 
   <!-- MARQUEE -->
-  <div class="marquee-bar">
-    <div class="marquee-track">
-      <span>🌻 Explore Our Farm</span>
-      <span>🌿 Fresh From the Field</span>
-      <span>🍎 Seasonal Harvests</span>
-      <span>🥚 Farm Fresh Eggs</span>
-      <span>🍯 Raw Honey</span>
-      <span>🌻 Explore Our Farm</span>
-      <span>🌿 Fresh From the Field</span>
-      <span>🍎 Seasonal Harvests</span>
-      <span>🥚 Farm Fresh Eggs</span>
-      <span>🍯 Raw Honey</span>
-    </div>
-  </div>
 
-  <!-- THIS SEASON'S MENU -->
-  <section class="season-menu">
-    <div class="season-left">
-      <img src="https://images.unsplash.com/photo-1574226516831-e1dff420e562?w=600&q=80" alt="Fresh farm produce" />
-    </div>
-    <div class="season-right">
-      <h2 class="section-title dark">This Season's<br />Menu</h2>
-      <div class="menu-grid">
-        <div class="menu-card">
-          <div class="menu-card-inner">
-            <span class="menu-leaf">🍂</span>
-            <p>Autumn Apple Picking & Cider Pressing</p>
-          </div>
-        </div>
-        <div class="menu-card">
-          <div class="menu-card-inner">
-            <span class="menu-leaf">🎃</span>
-            <p>Pumpkin Patch & Corn Maze Adventure</p>
-          </div>
-        </div>
-        <div class="menu-card">
-          <div class="menu-card-inner">
-            <span class="menu-leaf">🌻</span>
-            <p>Sunflower Field Tours & U-Pick Bouquets</p>
-          </div>
-        </div>
-        <div class="menu-card">
-          <div class="menu-card-inner">
-            <span class="menu-leaf">🥧</span>
-            <p>Farm-to-Table Dinners Every Saturday</p>
-          </div>
-        </div>
-      </div>
+  <section class="marquee">
+    <div class="marquee-content">
+      <span>✦ EXPLORE OUR FARM ✦</span>
+      <span>FRESH PRODUCE ✦</span>
+      <span>FAMILY EXPERIENCES ✦</span>
+      <span>SEASONAL EVENTS ✦</span>
+      <span>LOCAL HONEY ✦</span>
+      <span>APPLE CIDER ✦</span>
     </div>
   </section>
 
-  <!-- UPCOMING EVENTS -->
-  <section class="events-section">
-    <div class="events-header">
-      <h2 class="section-title light">Upcoming Events</h2>
-      <a href="experiences.html" class="visit-cal-link">Visit Calendar <span class="arrow">→</span></a>
-    </div>
-    <div class="season-tabs">
-      <button class="tab-btn active" data-season="all">All</button>
-      <button class="tab-btn" data-season="spring">Spring</button>
-      <button class="tab-btn" data-season="summer">Summer</button>
-      <button class="tab-btn" data-season="autumn">Autumn</button>
-      <button class="tab-btn" data-season="winter">Winter</button>
-    </div>
-    <div class="events-grid" id="eventsGrid">
-      <div class="event-card featured" data-season="autumn">
-        <p class="event-date">October 12, 2026</p>
-        <h3 class="event-title">Harvest Festival</h3>
-        <p class="event-desc">A full day of apple picking, hayrides, live bluegrass music, and the annual pumpkin
-          carving contest. Kids and families welcome.</p>
-        <a href="experiences.html" class="btn-event">Learn More</a>
+  <!-- MENU -->
+
+  <section class="menu-section">
+
+    <div class="menu-grid fade-up">
+
+      <div class="menu-image"></div>
+
+      <div class="menu-title">
+        <h2>This Season’s Menu</h2>
       </div>
-      <div class="event-card" data-season="autumn">
-        <p class="event-date">October 19, 2026</p>
-        <h3 class="event-title">Corn Maze Opens</h3>
-        <p class="event-desc">Our famous 5-acre corn maze returns! Navigate the seasonal design and earn a free cider at
-          the end.</p>
-        <a href="experiences.html" class="btn-event">Learn More</a>
-      </div>
-      <div class="event-card" data-season="winter">
-        <p class="event-date">December 6, 2026</p>
-        <h3 class="event-title">Holiday Market</h3>
-        <p class="event-desc">Local artisans, wreaths, homemade pies, and warm apple cider in the restored 1890s barn. A
-          holiday tradition.</p>
-        <a href="experiences.html" class="btn-event">Learn More</a>
-      </div>
+
     </div>
+
+    <div class="menu-cards">
+
+      <div class="menu-card fade-up">
+        Spring Harvest
+      </div>
+
+      <div class="menu-card fade-up">
+        Homemade Jams
+      </div>
+
+      <div class="menu-card fade-up">
+        Farm Bakery
+      </div>
+
+      <div class="menu-card fade-up">
+        Autumn Produce
+      </div>
+
+    </div>
+
   </section>
 
-  <!-- OUR STORY PREVIEW -->
-  <section class="story-preview">
-    <div class="story-left">
-      <div class="story-label">Our Story</div>
-      <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80" alt="The farm" />
+  <!-- EVENTS -->
+
+  <section class="events">
+
+    <div class="events-top">
+      <h2>Upcoming Events</h2>
+
+      <a href="#" class="calendar-link">
+        VISIT CALENDAR →
+      </a>
     </div>
-    <div class="story-right">
-      <h2 class="story-title">Rooted in this land since 1962</h2>
-      <p>Hollow Creek Farm has been in the Calloway family for over six decades. What started as a small vegetable
-        operation has grown into one of the region's most beloved agritainment destinations — a place where families
-        come back year after year.</p>
-      <div class="stats-row">
-        <div class="stat">
-          <span class="stat-big">1962</span>
-          <span class="stat-label">Since</span>
-        </div>
-        <div class="stat">
-          <span class="stat-big">140</span>
-          <span class="stat-label">Acres</span>
-        </div>
-        <div class="stat">
-          <span class="stat-big">1890s</span>
-          <span class="stat-label">Restored Barn</span>
-        </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">ALL</button>
+      <button class="filter-btn" data-filter="spring">SPRING</button>
+      <button class="filter-btn" data-filter="summer">SUMMER</button>
+      <button class="filter-btn" data-filter="autumn">AUTUMN</button>
+      <button class="filter-btn" data-filter="winter">WINTER</button>
+    </div>
+
+    <div class="event-cards">
+
+      <div class="event-card red fade-up" data-season="spring">
+        <h3>May 12</h3>
+        <p>
+          Tulip Festival & live music with fresh baked pastries and
+          local vendors.
+        </p>
+        <a href="#">LEARN MORE →</a>
       </div>
+
+      <div class="event-card fade-up" data-season="summer">
+        <h3>July 4</h3>
+        <p>
+          Summer sunset picnic nights with bonfires and farm tours.
+        </p>
+        <a href="#">LEARN MORE →</a>
+      </div>
+
+      <div class="event-card fade-up" data-season="autumn">
+        <h3>October 1</h3>
+        <p>
+          Pumpkin patch opening and apple cider tastings all weekend.
+        </p>
+        <a href="#">LEARN MORE →</a>
+      </div>
+
     </div>
+
   </section>
 
-  <!-- FRESH ON THE FARM -->
-  <section class="fresh-section">
-    <h2 class="section-title light center">Fresh on the Farm</h2>
-    <div class="fresh-carousel-wrapper">
-      <button class="carousel-btn prev" id="freshPrev">&#8592;</button>
-      <div class="fresh-grid" id="freshGrid">
-        <div class="fresh-card">
-          <div class="fresh-img">
-            <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=400&q=80" alt="Fresh Eggs" />
+  <!-- STORY -->
+
+  <section class="story">
+
+    <div class="story-grid">
+
+      <div class="story-image fade-up"></div>
+
+      <div class="story-content fade-up">
+
+        <h2>Our Story</h2>
+
+        <p>
+          Hollow Creek Farm has been bringing families together for over
+          sixty years through fresh produce, handcrafted goods, and
+          unforgettable seasonal traditions. Nestled among rolling hills
+          and sunflower fields, our farm celebrates the beauty of local
+          agriculture and community.
+        </p>
+
+        <div class="stats">
+
+          <div class="stat">
+            <h3>1962</h3>
+            <p>Founded</p>
           </div>
-          <h3>Fresh Eggs</h3>
-          <p>Our free-range hens roam the pastures daily. Collected every morning and available in the farm store.</p>
-          <a href="shop.html" class="learn-link">Learn More →</a>
-        </div>
-        <div class="fresh-card">
-          <div class="fresh-img">
-            <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400&q=80" alt="Raw Honey" />
+
+          <div class="stat">
+            <h3>140</h3>
+            <p>Acres</p>
           </div>
-          <h3>Raw Honey</h3>
-          <p>Harvested from our own hives nestled in the wildflower meadows. Pure, unfiltered, and wildly delicious.</p>
-          <a href="shop.html" class="learn-link">Learn More →</a>
-        </div>
-        <div class="fresh-card">
-          <div class="fresh-img">
-            <img src="https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=400&q=80" alt="Apple Pie" />
+
+          <div class="stat">
+            <h3>1890</h3>
+            <p>Restored Barn</p>
           </div>
-          <h3>Apple Pie</h3>
-          <p>Baked in-house with apples straight from our orchard. Available whole or by the slice at the farm stand.
-          </p>
-          <a href="shop.html" class="learn-link">Learn More →</a>
+
         </div>
-        <div class="fresh-card">
-          <div class="fresh-img">
-            <img src="https://images.unsplash.com/photo-1601004890657-b8a9bab1e95d?w=400&q=80" alt="Pumpkins" />
-          </div>
-          <h3>Pumpkins</h3>
-          <p>Pick your own or choose from our curated selection — heirlooms, pie pumpkins, and decorative gourds.</p>
-          <a href="shop.html" class="learn-link">Learn More →</a>
-        </div>
+
       </div>
-      <button class="carousel-btn next" id="freshNext">&#8594;</button>
+
     </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+
+  <section class="products">
+
+    <h2>Fresh on the Farm</h2>
+
+    <div class="product-grid">
+
+      <div class="product-card fade-up">
+
+        <div class="product-image"></div>
+
+        <h3>Fresh Eggs</h3>
+
+        <p>
+          Farm fresh eggs collected daily from our free-range hens.
+        </p>
+
+        <a href="#" class="learn-link">LEARN MORE →</a>
+
+      </div>
+
+      <div class="product-card fade-up">
+
+        <div class="product-image"></div>
+
+        <h3>Raw Honey</h3>
+
+        <p>
+          Local wildflower honey harvested straight from our hives.
+        </p>
+
+        <a href="#" class="learn-link">LEARN MORE →</a>
+
+      </div>
+
+      <div class="product-card fade-up">
+
+        <div class="product-image"></div>
+
+        <h3>Apple Pie</h3>
+
+        <p>
+          Homemade apple pies baked fresh every morning in our bakery.
+        </p>
+
+        <a href="#" class="learn-link">LEARN MORE →</a>
+
+      </div>
+
+    </div>
+
   </section>
 
   <!-- FOOTER -->
+
   <footer class="footer">
-    <div class="footer-left">
-      <h2 class="footer-tagline">Never miss<br />What's <em>in season</em></h2>
-      <div class="footer-info">
-        <p class="footer-label">Market Hours</p>
-        <p>Tue to Sat: 9am to 5pm | Sun: 10am to 3pm</p>
-        <p>1482 Hollow Creek Road,<br />Morristown, New Jersey, 07960</p>
+
+    <div class="footer-grid">
+
+      <div>
+        <h2>Never miss what’s in season</h2>
+
+        <h3>Market Hours</h3>
+
+        <p>
+          Tue to Sat: 9am to 5pm<br>
+          Sun: 10am to 3pm<br><br>
+
+          1482 Hollow Creek Road,<br>
+          Morristown, New Jersey, 07960
+        </p>
       </div>
+
+      <div>
+        <h3>Contact Us</h3>
+
+        <p>
+          (555) 847-2210<br>
+          hello@hollowcreekfarm.com
+        </p>
+      </div>
+
+      <div>
+
+        <div class="newsletter">
+          <input type="email" placeholder="Your Email Address">
+          <button>Contact</button>
+        </div>
+
+      </div>
+
     </div>
-    <div class="footer-right">
-      <div class="footer-contact-info">
-        <p class="footer-label">Contact Us</p>
-        <p>(555) 847-2210</p>
-        <p>hello@hollowcreekfarm.com</p>
-      </div>
-      <div class="footer-newsletter">
-        <input type="email" placeholder="Your Email Address" class="footer-email" />
-        <button class="footer-contact-btn">Contact</button>
-      </div>
-      <p class="footer-social">Follow Us on Instagram, TikTok &amp; Facebook: <strong>@HollowCreekFarm</strong></p>
+
+    <div class="social">
+      Follow Us on Instagram, TikTok & Facebook: @HollowCreekFarm
     </div>
+
   </footer>
 
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
   <script src="script.js"></script>
+
 </body>
 
 </html>
