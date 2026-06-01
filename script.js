@@ -1,30 +1,30 @@
 /* FILTER BUTTONS */
 
-const filterBtns = document.querySelectorAll('.filter-btn');
-const cards = document.querySelectorAll('.event-card');
+// const filterBtns = document.querySelectorAll('.filter-btn');
+// const cards = document.querySelectorAll('.event-card');
 
-filterBtns.forEach(btn => {
+// filterBtns.forEach(btn => {
 
-    btn.addEventListener('click', () => {
+//     btn.addEventListener('click', () => {
 
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+//         filterBtns.forEach(b => b.classList.remove('active'));
+//         btn.classList.add('active');
 
-        const filter = btn.dataset.filter;
+//         const filter = btn.dataset.filter;
 
-        cards.forEach(card => {
+//         cards.forEach(card => {
 
-            if (filter === 'all' || card.dataset.season === filter) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+//             if (filter === 'all' || card.dataset.season === filter) {
+//                 card.style.display = 'block';
+//             } else {
+//                 card.style.display = 'none';
+//             }
 
-        });
+//         });
 
-    });
+//     });
 
-});
+// });
 
 /* SCROLL ANIMATION */
 
@@ -96,3 +96,41 @@ document.querySelectorAll("*").forEach((el) => {
         ring.style.height = "36px";
     });
 });
+
+// SEASON IMAGE CHANGING
+
+const seasonImage = document.getElementById("season-image");
+
+const month = new Date().getMonth() + 1; // 1-12
+
+if (month >= 3 && month <= 5) {
+    seasonImage.src = "springfarm.png";
+}
+else if (month >= 6 && month <= 8) {
+    seasonImage.src = "summerfarm.png";
+}
+else if (month >= 9 && month <= 11) {
+    seasonImage.src = "fallfarm.png";
+}
+else {
+    seasonImage.src = "winterfarm.png";
+}
+
+//SEASON TEXT CHANGING
+// const seasonText = document.getElementById("season-text");
+
+// const month = new Date().getMonth() + 1; // 1-12
+
+// if (month >= 3 && month <= 5) {
+//     seasonText.innerHTML = "Sunflower field opening mid-May through";
+// }
+// else if (month >= 6 && month <= 8) {
+//     seasonText.innerHTML = "Summer events and activities";
+// }
+// else if (month >= 9 && month <= 11) {
+//     seasonText.innerHTML = "Fall events and activities";
+// }
+// else {
+//     seasonText.innerHTML = "Winter events and activities";
+// }
+
