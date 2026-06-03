@@ -288,7 +288,7 @@ img{
 
 .menu-section{
     padding:6rem 5%;
-    background:url('wheatback.png') center/cover;
+    background:linear-gradient(rgba(255, 255, 255, 0.3),rgba(255, 255, 255, 0.3)), url('images/wheatback.png') center/cover;
 }
 
 .menu-grid{
@@ -300,7 +300,7 @@ img{
 
 .menu-image{
     height:300px;
-    background:url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?q=80&w=1400&auto=format&fit=crop') center/cover;
+    background:url('images/family-apples.png') center/cover;
     border:4px solid #d6aa44;
 }
 
@@ -323,7 +323,7 @@ img{
 }
 
 .menu-card{
-    background:rgba(147,168,135,0.8);
+    background:#1f3f1ec9;
     padding:2rem;
     text-align:center;
     color:white;
@@ -334,6 +334,7 @@ img{
     font-family:'Cormorant Garamond',serif;
     font-size:2rem;
     transition:.4s;
+    display:none;
 }
 
 .menu-card:hover{
@@ -434,8 +435,30 @@ img{
 .story{
     padding:6rem 5%;
     background:
-    linear-gradient(rgba(255,255,255,0.82),rgba(255,255,255,0.82)),
-    url('https://www.transparenttextures.com/patterns/floral-white.png');
+    /* linear-gradient(rgba(255,255,255,0.82),rgba(255,255,255,0.82)), */
+    url('images/leafy-background.png') center/cover;
+}
+
+.story-body{
+    background:#f6f0e6;
+    border:2px solid #d6aa44;
+    padding:1.5rem;
+    text-align:left;
+    margin-bottom:3.7rem;
+}
+
+.story-title{
+    background:#f6f0e6;
+    border:2px solid #d6aa44;
+    padding:1.5rem;
+    text-align:left;
+    margin-bottom:3.7rem;
+}
+
+.about-banner{
+    width:100%;
+    height:auto;
+    margin:2rem 0;
 }
 
 .story-grid{
@@ -447,7 +470,7 @@ img{
 
 .story-image{
     height:500px;
-    background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop') center/cover;
+    background:url('images/family-apples.png') center/cover;
     border:4px solid #d6aa44;
 }
 
@@ -515,15 +538,15 @@ img{
 }
 
 .product-card:nth-child(1) .product-image{
-    background:url('https://images.unsplash.com/photo-1569288052389-dac9b01c9c05?q=80&w=1200&auto=format&fit=crop') center/cover;
+    background:url('images/apple-pie.png') center/cover;
 }
 
 .product-card:nth-child(2) .product-image{
-    background:url('https://images.unsplash.com/photo-1587049352851-8d4e89133924?q=80&w=1200&auto=format&fit=crop') center/cover;
+    background:url('images/local-honey.png') center/cover;
 }
 
 .product-card:nth-child(3) .product-image{
-    background:url('https://images.unsplash.com/photo-1562007908-17c67e878c88?q=80&w=1200&auto=format&fit=crop') center/cover;
+    background:url('images/seasonal-events.png') center/cover;
 }
 
 .product-card h3{

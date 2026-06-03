@@ -1,31 +1,3 @@
-/* FILTER BUTTONS */
-
-// const filterBtns = document.querySelectorAll('.filter-btn');
-// const cards = document.querySelectorAll('.event-card');
-
-// filterBtns.forEach(btn => {
-
-//     btn.addEventListener('click', () => {
-
-//         filterBtns.forEach(b => b.classList.remove('active'));
-//         btn.classList.add('active');
-
-//         const filter = btn.dataset.filter;
-
-//         cards.forEach(card => {
-
-//             if (filter === 'all' || card.dataset.season === filter) {
-//                 card.style.display = 'block';
-//             } else {
-//                 card.style.display = 'none';
-//             }
-
-//         });
-
-//     });
-
-// });
-
 /* SCROLL ANIMATION */
 
 const observer = new IntersectionObserver(entries => {
@@ -104,33 +76,61 @@ const seasonImage = document.getElementById("season-image");
 const month = new Date().getMonth() + 1; // 1-12
 
 if (month >= 3 && month <= 5) {
-    seasonImage.src = "springfarm.png";
+    seasonImage.src = "images/springfarm.png";
 }
 else if (month >= 6 && month <= 8) {
-    seasonImage.src = "summerfarm.png";
+    seasonImage.src = "images/summerfarm.png";
 }
 else if (month >= 9 && month <= 11) {
-    seasonImage.src = "fallfarm.png";
+    seasonImage.src = "images/fallfarm.png";
 }
 else {
-    seasonImage.src = "winterfarm.png";
+    seasonImage.src = "images/winterfarm.png";
 }
 
 //SEASON TEXT CHANGING
-// const seasonText = document.getElementById("season-text");
+function getCurrentSeason() {
+  const month = new Date().getMonth() + 1;
 
-// const month = new Date().getMonth() + 1; // 1-12
+  if (month >= 3 && month <= 5) return 'spring';
+  if (month >= 6 && month <= 8) return 'summer';
+  if (month >= 9 && month <= 11) return 'fall';
 
-// if (month >= 3 && month <= 5) {
-//     seasonText.innerHTML = "Sunflower field opening mid-May through";
-// }
-// else if (month >= 6 && month <= 8) {
-//     seasonText.innerHTML = "Summer events and activities";
-// }
-// else if (month >= 9 && month <= 11) {
-//     seasonText.innerHTML = "Fall events and activities";
-// }
-// else {
-//     seasonText.innerHTML = "Winter events and activities";
-// }
+  return 'winter';
+}
 
+const currentSeason = getCurrentSeason();
+
+document.querySelectorAll('.menu-card').forEach(card => {
+  if (card.classList.contains(currentSeason)) {
+    card.style.display = 'block';
+  }
+});
+
+/* FILTER BUTTONS */
+
+ const filterBtns = document.querySelectorAll('.filter-btn');
+ const cards = document.querySelectorAll('.event-card');
+
+ filterBtns.forEach(btn => {
+
+     btn.addEventListener('click', () => {
+
+         filterBtns.forEach(b => b.classList.remove('active'));
+         btn.classList.add('active');
+
+         const filter = btn.dataset.filter;
+
+         cards.forEach(card => {
+
+             if (filter === 'all' || card.dataset.season === filter) {
+                 card.style.display = 'block';
+             } else {
+                 card.style.display = 'none';
+             }
+
+         });
+
+     });
+
+ });
