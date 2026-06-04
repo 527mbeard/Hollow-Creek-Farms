@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hollow Creek Farm</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet">
@@ -396,57 +398,220 @@
 
   <!-- PRODUCTS -->
 
-  <section class="products">
+  <section class="fresh-section">
 
-    <h2>Fresh on the Farm</h2>
+    <h1 class="section-title">Fresh on the Farm</h1>
 
-    <div class="product-grid">
+    <div id="farmCarousel" class="carousel slide">
 
-      <div class="product-card fade-up">
+      <div class="carousel-inner">
 
-        <div class="product-image"></div>
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-4">
+              <article class="card">
+                <div class="card-image image-placeholder">
+                  <img src="images/fallfarm.png" alt="">
+                </div>
+                <h2>Fresh Eggs</h2>
+                <p>
+                  Farm-fresh eggs collected daily from free-range hens.
+                  Rich flavor and perfect for breakfast or baking.
+                </p>
+                <a href="#" class="learn-more">
+                  LEARN MORE <span>➜</span>
+                </a>
+              </article>
+            </div>
 
-        <h3>Fresh Eggs</h3>
+            <div class="col-md-4">
+              <article class="card">
+                <div class="card-image image-placeholder">
+                  <img src="images/fallfarm.png" alt="">
+                </div>
+                <h2>Raw Honey</h2>
+                <p>
+                  Pure, locally harvested honey straight from the hive.
+                  Naturally sweet and packed with flavor.
+                </p>
+                <a href="#" class="learn-more">
+                  LEARN MORE <span>➜</span>
+                </a>
+              </article>
+            </div>
 
-        <p>
-          Farm fresh eggs collected daily from our free-range hens.
-        </p>
+            <div class="col-md-4">
+              <article class="card">
+                <div class="card-image image-placeholder">
+                  <img src="images/fallfarm.png" alt="">
+                </div>
+                <h2>Apple Pie</h2>
+                <p>
+                  Homemade apple pie baked with seasonal apples and a
+                  buttery golden crust.
+                </p>
+                <a href="#" class="learn-more">
+                  LEARN MORE <span>➜</span>
+                </a>
+              </article>
+            </div>
 
-        <a href="#" class="learn-link">LEARN MORE →</a>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="row">
+
+            <div class="col-md-4">
+              <article class="card">
+                <div class="card-image image-placeholder">
+                  <img src="images/fallfarm.png" alt="">
+                </div>
+                <h2>Goat Cheese</h2>
+                <p>
+                  Handcrafted artisan goat cheese made fresh each week.
+                </p>
+                <a href="#" class="learn-more">
+                  LEARN MORE <span>➜</span>
+                </a>
+              </article>
+            </div>
+
+            <div class="col-md-4">
+              <article class="card">
+                <div class="card-image image-placeholder">
+                  <img src="images/fallfarm.png" alt="">
+                </div>
+                <h2>Strawberries</h2>
+                <p>
+                  Sweet, juicy berries picked at peak ripeness.
+                </p>
+                <a href="#" class="learn-more">
+                  LEARN MORE <span>➜</span>
+                </a>
+              </article>
+            </div>
+
+            <div class="col-md-4">
+              <article class="card">
+                <div class="card-image image-placeholder">
+                  <img src="images/fallfarm.png" alt="">
+                </div>
+                <h2>Blueberries</h2>
+                <p>
+                  Plump, sweet blueberries bursting with antioxidants.
+                </p>
+                <a href="#" class="learn-more">
+                  LEARN MORE <span>➜</span>
+                </a>
+              </article>
+            </div>
+
+          </div>
+        </div>
 
       </div>
 
-      <div class="product-card fade-up">
+      <button class="carousel-control-prev" data-bs-target="#farmCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
 
-        <div class="product-image"></div>
-
-        <h3>Raw Honey</h3>
-
-        <p>
-          Local wildflower honey harvested straight from our hives.
-        </p>
-
-        <a href="#" class="learn-link">LEARN MORE →</a>
-
-      </div>
-
-      <div class="product-card fade-up">
-
-        <div class="product-image"></div>
-
-        <h3>Apple Pie</h3>
-
-        <p>
-          Homemade apple pies baked fresh every morning in our bakery.
-        </p>
-
-        <a href="#" class="learn-link">LEARN MORE →</a>
-
-      </div>
+      <button class="carousel-control-next" data-bs-target="#farmCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
 
     </div>
-
   </section>
+
+
+  <!-- <section class="fresh-section">
+
+    <h1 class="section-title">Fresh on the Farm</h1>
+    <div class="carousel-wrapper">
+
+      <button class="arrow left">&#8592;</button>
+
+      <div class="carousel">
+
+        <div class="carousel-track">
+
+          <article class="card">
+            <div class="card-image image-placeholder">
+              <img src="images/fallfarm.png" alt="">
+            </div>
+            <h2>Fresh Eggs</h2>
+            <p>
+              Farm-fresh eggs collected daily from free-range hens.
+              Rich flavor and perfect for breakfast or baking.
+            </p>
+            <a href="#" class="learn-more">
+              LEARN MORE <span>➜</span>
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="card-image image-placeholder">
+              <img src="images/fallfarm.png" alt="">
+            </div>
+            <h2>Raw Honey</h2>
+            <p>
+              Pure, locally harvested honey straight from the hive.
+              Naturally sweet and packed with flavor.
+            </p>
+            <a href="#" class="learn-more">
+              LEARN MORE <span>➜</span>
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="card-image image-placeholder">
+              <img src="images/fallfarm.png" alt="">
+            </div>
+            <h2>Apple Pie</h2>
+            <p>
+              Homemade apple pie baked with seasonal apples and a
+              buttery golden crust.
+            </p>
+            <a href="#" class="learn-more">
+              LEARN MORE <span>➜</span>
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="card-image image-placeholder">
+              <img src="images/fallfarm.png" alt="">
+            </div>
+            <h2>Goat Cheese</h2>
+            <p>
+              Handcrafted artisan goat cheese made fresh each week.
+            </p>
+            <a href="#" class="learn-more">
+              LEARN MORE <span>➜</span>
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="card-image image-placeholder">
+              <img src="images/fallfarm.png" alt="">
+            </div>
+            <h2>Strawberries</h2>
+            <p>
+              Sweet, juicy berries picked at peak ripeness.
+            </p>
+            <a href="#" class="learn-more">
+              LEARN MORE <span>➜</span>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+
+      <button class="arrow right">&#8594;</button>
+
+    </div> 
+
+  </section> -->
 
   <!-- FOOTER -->
 
@@ -455,13 +620,12 @@
     <div class="footer-grid">
 
       <div>
-        <h2>Never miss what’s in season</h2>
+        <h2>Never miss <br> what’s <i>in season </i></h2>
 
         <h3>Market Hours</h3>
 
         <p>
-          Tue to Sat: 9am to 5pm<br>
-          Sun: 10am to 3pm<br><br>
+          Tue to Sat: 9am to 5pm | Sun: 10am to 3pm <br>
 
           1482 Hollow Creek Road,<br>
           Morristown, New Jersey, 07960
@@ -475,9 +639,6 @@
           (555) 847-2210<br>
           hello@hollowcreekfarm.com
         </p>
-      </div>
-
-      <div>
 
         <div class="newsletter">
           <input type="email" placeholder="Your Email Address">
@@ -497,7 +658,11 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+<script src="script.js"></script>
 
 </body>
 

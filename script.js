@@ -90,47 +90,49 @@ else {
 
 //SEASON TEXT CHANGING
 function getCurrentSeason() {
-  const month = new Date().getMonth() + 1;
+    const month = new Date().getMonth() + 1;
 
-  if (month >= 3 && month <= 5) return 'spring';
-  if (month >= 6 && month <= 8) return 'summer';
-  if (month >= 9 && month <= 11) return 'fall';
+    if (month >= 3 && month <= 5) return 'spring';
+    if (month >= 6 && month <= 8) return 'summer';
+    if (month >= 9 && month <= 11) return 'fall';
 
-  return 'winter';
+    return 'winter';
 }
 
 const currentSeason = getCurrentSeason();
 
 document.querySelectorAll('.menu-card').forEach(card => {
-  if (card.classList.contains(currentSeason)) {
-    card.style.display = 'block';
-  }
+    if (card.classList.contains(currentSeason)) {
+        card.style.display = 'block';
+    }
 });
 
 /* FILTER BUTTONS */
 
- const filterBtns = document.querySelectorAll('.filter-btn');
- const cards = document.querySelectorAll('.event-card');
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.event-card');
 
- filterBtns.forEach(btn => {
+filterBtns.forEach(btn => {
 
-     btn.addEventListener('click', () => {
+    btn.addEventListener('click', () => {
 
-         filterBtns.forEach(b => b.classList.remove('active'));
-         btn.classList.add('active');
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-         const filter = btn.dataset.filter;
+        const filter = btn.dataset.filter;
 
-         cards.forEach(card => {
+        cards.forEach(card => {
 
-             if (filter === 'all' || card.dataset.season === filter) {
-                 card.style.display = 'block';
-             } else {
-                 card.style.display = 'none';
-             }
+            if (filter === 'all' || card.dataset.season === filter) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
 
-         });
+        });
 
-     });
+    });
 
- });
+});
+
+//  Carousel 
