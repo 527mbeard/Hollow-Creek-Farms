@@ -24,64 +24,7 @@ body {
     background: var(--cream);
     color: var(--text);
     overflow-x: hidden;
-    cursor: none;
 }
-
-/* ------------------------
------------------------------------------
------------------------------------------
-------------Custom Cursor------------------------
------------------------------------------
------------------ */
-
-/* Main dot */
-.cursor {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    background: #5a6b3a;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition:
-        transform 0.1s,
-        width 0.3s ease,
-        height 0.3s ease,
-        background 0.3s ease;
-}
-
-/* Ring */
-.cursor-ring {
-    position: fixed;
-    width: 36px;
-    height: 36px;
-    border: 1px solid #5a6b3a;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition:
-        transform 0.18s ease,
-        width 0.3s ease,
-        height 0.3s ease,
-        opacity 0.3s ease;
-    opacity: 0.6;
-}
-
-/* Disable on touch devices */
-@media (max-width: 768px) {
-    body {
-        cursor: auto;
-    }
-
-    .cursor,
-    .cursor-ring {
-        display: none;
-    }
-}
-
-
 
 h1,
 h2,
@@ -549,16 +492,16 @@ body {
     align-items: center;
 }
 
-.carousel{
-    overflow:hidden;
-    width:100%;
+.carousel {
+    overflow: hidden;
+    width: 100%;
 }
 
-.carousel-track{
-    display:flex;
-    gap:20px;
-    transition:transform .5s ease;
-    will-change:transform;
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform .5s ease;
+    will-change: transform;
 }
 
 /* ======================
@@ -576,16 +519,16 @@ body {
     transition: .35s;
 }
 
-.card-image{
-    height:220px;
-    overflow:hidden;
-    margin-bottom:15px;
+.card-image {
+    height: 220px;
+    overflow: hidden;
+    margin-bottom: 15px;
 }
 
-.card-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform .5s ease;
 }
 
@@ -709,7 +652,7 @@ body {
 .newsletter {
     display: flex;
     margin-top: 1rem;
-    border:2px solid var(--gold);
+    border: 2px solid var(--gold);
 }
 
 .newsletter input {
@@ -727,7 +670,7 @@ body {
     padding: 0 2rem;
     cursor: pointer;
     font-weight: 600;
-    z-index:2;
+    z-index: 2;
 }
 
 .social {
@@ -805,4 +748,294 @@ body {
         font-size: 3rem;
     }
 
+}
+
+
+/* ABOUT PAGE */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+}
+
+/* ====================
+   STORY SECTION
+==================== */
+
+.story-section {
+    padding: 60px 5%;
+    background-image: url("images/veggybackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.section-title {
+    display: inline-block;
+    border: 3px solid #c89d45;
+    background-color: var(--cream);
+    color: var(--sage);
+    padding: 10px 25px;
+    font-size: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 30px;
+}
+
+.story-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.placeholder {
+    height: 220px;
+    border: 3px solid #d0d0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.story-text {
+    margin-top: 35px;
+    background: #f5f1eb;
+    border: 3px solid #dca840;
+    padding: 25px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* ====================
+   FAMILY SECTION
+==================== */
+
+.family-section {
+    background: #d9a944;
+    padding: 80px 5%;
+}
+
+.family-section h2 {
+    font-size: 3.2rem;
+
+    margin-bottom: 40px;
+
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.family-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.family-card {
+    height: 260px;
+
+    background: #e7e3de;
+
+    border: 3px solid #d8d8d8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .3s;
+}
+
+.family-card:hover {
+    transform: translateY(-5px);
+}
+
+.placeholder img,
+.family-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ====================
+   RESPONSIVE
+==================== */
+
+@media(max-width:900px) {
+
+    .story-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .family-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+}
+
+@media(max-width:600px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .family-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* CALENDAR  */
+
+/* ==================================
+   CALENDAR SECTION
+================================== */
+
+.calendar-section {
+    background: #D9A944;
+    padding: 40px;
+}
+
+.calendar-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* ==================================
+   LAYOUT
+================================== */
+
+.calendar-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.calendar-container {
+    flex: 1;
+    border: 3px solid #1F4A2E;
+    background: #F3EFEA;
+    overflow: hidden;
+}
+
+/* ==================================
+   HEADER BAR
+================================== */
+
+.weekday-bar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    background: #1F4A2E;
+
+    margin: 10px;
+    border-radius: 4px;
+
+    overflow: hidden;
+}
+
+.weekday-bar div {
+    color: white;
+    text-align: center;
+
+    padding: 12px 8px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    border-right: 2px solid #9A2E22;
+}
+
+.weekday-bar div:last-child {
+    border-right: none;
+}
+
+/* ==================================
+   GRID
+================================== */
+
+#calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day {
+    min-height: 140px;
+
+    background: #F3EFEA;
+
+    border-right: 2px solid #9A2E22;
+    border-top: 2px solid #9A2E22;
+
+    padding: 8px;
+
+    position: relative;
+}
+
+.day:nth-child(7n) {
+    border-right: none;
+}
+
+.day-number {
+    font-weight: bold;
+    color: #1F4A2E;
+    font-size: 1rem;
+}
+
+/* ==================================
+   EVENTS
+================================== */
+
+.event {
+    margin-top: 6px;
+
+    padding: 4px 8px;
+
+    color: white;
+
+    border-radius: 4px;
+
+    font-size: .8rem;
+
+    overflow: hidden;
+}
+
+/* ==================================
+   ARROWS
+================================== */
+
+.month-arrow {
+    border: none;
+    background: none;
+
+    color: #1F4A2E;
+
+    font-size: 3.5rem;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.month-arrow:hover {
+    transform: scale(1.15);
 }

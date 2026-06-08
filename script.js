@@ -19,56 +19,6 @@ document.querySelectorAll('.fade-up').forEach(el => {
 });
 
 
-// ------CURSORRRR-----
-const cursor = document.getElementById("cursor");
-const ring = document.getElementById("cursorRing");
-
-let mouseX = 0;
-let mouseY = 0;
-
-let ringX = 0;
-let ringY = 0;
-
-document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
-
-function animateCursor() {
-    cursor.style.left = mouseX + "px";
-    cursor.style.top = mouseY + "px";
-
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-
-    ring.style.left = ringX + "px";
-    ring.style.top = ringY + "px";
-
-    requestAnimationFrame(animateCursor);
-}
-
-animateCursor();
-
-document.querySelectorAll("*").forEach((el) => {
-    el.addEventListener("mouseenter", () => {
-        cursor.style.width = "18px";
-        cursor.style.height = "18px";
-        cursor.style.background = "#c4714a";
-
-        ring.style.width = "54px";
-        ring.style.height = "54px";
-    });
-
-    el.addEventListener("mouseleave", () => {
-        cursor.style.width = "10px";
-        cursor.style.height = "10px";
-        cursor.style.background = "#5a6b3a";
-
-        ring.style.width = "36px";
-        ring.style.height = "36px";
-    });
-});
-
 // SEASON IMAGE CHANGING
 
 const seasonImage = document.getElementById("season-image");
@@ -135,4 +85,151 @@ filterBtns.forEach(btn => {
 
 });
 
-//  Carousel 
+//  CALENDAR
+
+// const events = [
+//     {
+//         title: "Sunflower Festival",
+//         start: "2026-08-12",
+//         end: "2026-08-16",
+//         color: "#1F4A2E"
+//     },
+//     {
+//         title: "Pumpkin Patch",
+//         start: "2026-10-01",
+//         end: "2026-10-31",
+//         color: "#D98B2B"
+//     },
+//     {
+//         title: "Farmers Market",
+//         start: "2026-07-08",
+//         end: "2026-07-10",
+//         color: "#8C2F27"
+//     }
+// ];
+
+// const monthYear =
+//     document.getElementById("monthYear");
+
+// const calendarGrid =
+//     document.getElementById("calendarGrid");
+
+// let currentDate = new Date();
+
+// const events = [
+//     {
+//         title: "Sunflower Festival",
+//         start: "2026-08-12",
+//         end: "2026-08-16",
+//         color: "#1F4A2E"
+//     },
+//     {
+//         title: "Pumpkin Patch",
+//         start: "2026-08-20",
+//         end: "2026-08-25",
+//         color: "#D98B2B"
+//     }
+// ];
+
+// function renderCalendar() {
+
+//     calendarGrid.innerHTML = "";
+
+//     const year = currentDate.getFullYear();
+//     const month = currentDate.getMonth();
+
+//     monthYear.textContent =
+//         new Date(year, month)
+//             .toLocaleDateString(
+//                 "en-US",
+//                 {
+//                     month: "long",
+//                     year: "numeric"
+//                 }
+//             );
+
+//     const firstDay =
+//         new Date(year, month, 1);
+
+//     const lastDay =
+//         new Date(year, month + 1, 0);
+
+//     let startDay =
+//         (firstDay.getDay() + 6) % 7;
+
+//     for (let i = 0; i < startDay; i++) {
+
+//         const empty =
+//             document.createElement("div");
+
+//         empty.classList.add("day");
+
+//         calendarGrid.appendChild(empty);
+//     }
+
+//     for (
+//         let d = 1;
+//         d <= lastDay.getDate();
+//         d++
+//     ) {
+
+//         const day =
+//             document.createElement("div");
+
+//         day.classList.add("day");
+
+//         const dateString =
+//             `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+
+//         day.innerHTML =
+//             `<div class="day-number">${d}</div>`;
+
+//         events.forEach(event => {
+
+//             if (
+//                 dateString >= event.start &&
+//                 dateString <= event.end
+//             ) {
+
+//                 const eventDiv =
+//                     document.createElement("div");
+
+//                 eventDiv.classList.add("event");
+
+//                 eventDiv.style.background =
+//                     event.color;
+
+//                 eventDiv.textContent =
+//                     event.title;
+
+//                 day.appendChild(eventDiv);
+//             }
+//         });
+
+//         calendarGrid.appendChild(day);
+//     }
+// }
+
+// renderCalendar();
+
+// document
+//     .getElementById("nextMonth")
+//     .addEventListener("click", () => {
+
+//         currentDate.setMonth(
+//             currentDate.getMonth() + 1
+//         );
+
+//         renderCalendar();
+//     });
+
+// document
+//     .getElementById("prevMonth")
+//     .addEventListener("click", () => {
+
+//         currentDate.setMonth(
+//             currentDate.getMonth() - 1
+//         );
+
+//         renderCalendar();
+//     });
