@@ -25,17 +25,19 @@ const seasonImage = document.getElementById("season-image");
 
 const month = new Date().getMonth() + 1; // 1-12
 
-if (month >= 3 && month <= 5) {
-    seasonImage.src = "images/springfarm.png";
-}
-else if (month >= 6 && month <= 8) {
-    seasonImage.src = "images/summerfarm.png";
-}
-else if (month >= 9 && month <= 11) {
-    seasonImage.src = "images/fallfarm.png";
-}
-else {
-    seasonImage.src = "images/winterfarm.png";
+if (seasonImage) {
+    if (month >= 3 && month <= 5) {
+        seasonImage.src = "images/springfarm.png";
+    }
+    else if (month >= 6 && month <= 8) {
+        seasonImage.src = "images/summerfarm.png";
+    }
+    else if (month >= 9 && month <= 11) {
+        seasonImage.src = "images/fallfarm.png";
+    }
+    else {
+        seasonImage.src = "images/winterfarm.png";
+    }
 }
 
 //SEASON TEXT CHANGING
@@ -85,151 +87,108 @@ filterBtns.forEach(btn => {
 
 });
 
+
 //  CALENDAR
+(() => {
+const CATS = {
+    planting: { color: '#2d5a27' },
+    harvest: { color: '#8b2020' },
+    market: { color: '#D4720A' },
+    other: { color: '#1a5a8a' }
+};
 
-// const events = [
-//     {
-//         title: "Sunflower Festival",
-//         start: "2026-08-12",
-//         end: "2026-08-16",
-//         color: "#1F4A2E"
-//     },
-//     {
-//         title: "Pumpkin Patch",
-//         start: "2026-10-01",
-//         end: "2026-10-31",
-//         color: "#D98B2B"
-//     },
-//     {
-//         title: "Farmers Market",
-//         start: "2026-07-08",
-//         end: "2026-07-10",
-//         color: "#8C2F27"
-//     }
-// ];
+const EVENTS = {
+    '2026-06-14': [{ name: 'Summer farm tour', cat: 'other', note: 'Guided walk through the fields' }],
+    '2026-06-15': [{ name: 'Summer farm tour', cat: 'other', note: 'Guided walk through the fields' }],
+    '2026-06-21': [{ name: 'Saturday market', cat: 'market', note: 'Fresh produce and baked goods' }],
+    '2026-07-04': [{ name: 'Berry picking', cat: 'harvest', note: 'U-pick berries from 9am to noon' }],
+    '2026-07-18': [{ name: 'Planting day', cat: 'planting', note: 'Tomatoes and peppers' }]
+};
 
-// const monthYear =
-//     document.getElementById("monthYear");
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
+const SHORT_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-// const calendarGrid =
-//     document.getElementById("calendarGrid");
+let events = {};
+let cur = new Date();
+cur.setDate(1);
+function dateKey(d) {
+    return d.getFullYear() + '-' +
+        String(d.getMonth() + 1).padStart(2, '0') + '-' +
+        String(d.getDate()).padStart(2, '0');
+}
 
-// let currentDate = new Date();
+/* ── Render calendar ── */
+function render() {
+    events = EVENTS;
+    const year = cur.getFullYear();
+    const month = cur.getMonth();
+    document.getElementById('farmMonthLabel').textContent = MONTHS[month] + ' ' + year;
 
-// const events = [
-//     {
-//         title: "Sunflower Festival",
-//         start: "2026-08-12",
-//         end: "2026-08-16",
-//         color: "#1F4A2E"
-//     },
-//     {
-//         title: "Pumpkin Patch",
-//         start: "2026-08-20",
-//         end: "2026-08-25",
-//         color: "#D98B2B"
-//     }
-// ];
+    const firstDay = new Date(year, month, 1);
+    let dow = firstDay.getDay();
+    dow = dow === 0 ? 6 : dow - 1; // Monday = 0
 
-// function renderCalendar() {
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const prevMonthDays = new Date(year, month, 0).getDate();
+    const today = new Date();
+    const totalCells = Math.ceil((dow + daysInMonth) / 7) * 7;
 
-//     calendarGrid.innerHTML = "";
+    let html = '';
+    let dayOfMonth = 1;
+    let nextMonthDay = 1;
 
-//     const year = currentDate.getFullYear();
-//     const month = currentDate.getMonth();
+    for (let row = 0; row < totalCells / 7; row++) {
+        html += '<tr>';
+        for (let col = 0; col < 7; col++) {
+            const i = row * 7 + col;
+            let d, m, y, cls = '';
 
-//     monthYear.textContent =
-//         new Date(year, month)
-//             .toLocaleDateString(
-//                 "en-US",
-//                 {
-//                     month: "long",
-//                     year: "numeric"
-//                 }
-//             );
+            if (i < dow) {
+                d = prevMonthDays - dow + i + 1;
+                m = month - 1; y = year;
+                if (m < 0) { m = 11; y--; }
+                cls = 'farm-cal__other-month';
+            } else if (i >= dow + daysInMonth) {
+                d = nextMonthDay++; m = month + 1; y = year;
+                if (m > 11) { m = 0; y++; }
+                cls = 'farm-cal__other-month';
+            } else {
+                d = dayOfMonth++; m = month; y = year;
+            }
 
-//     const firstDay =
-//         new Date(year, month, 1);
+            const cellDate = new Date(y, m, d);
+            if (cellDate.toDateString() === today.toDateString()) cls += ' farm-cal__today';
 
-//     const lastDay =
-//         new Date(year, month + 1, 0);
+            const sk = dateKey(cellDate);
+            const evs = events[sk] || [];
+            const chips = evs.map((ev, idx) => {
+                const color = (CATS[ev.cat] || CATS.other).color;
+                return `<span class="farm-cal__event-chip" style="background:${color}"
+                    title="${ev.note ? ev.note : ev.name}">${ev.name}</span>`;
+            }).join('');
 
-//     let startDay =
-//         (firstDay.getDay() + 6) % 7;
+            html += `<td class="${cls.trim()}" data-date="${sk}" role="gridcell">
+                   <span class="farm-cal__day-num">${d}</span>${chips}
+                 </td>`;
+        }
+        html += '</tr>';
+    }
 
-//     for (let i = 0; i < startDay; i++) {
+    document.getElementById('farmCalBody').innerHTML = html;
+}
 
-//         const empty =
-//             document.createElement("div");
+/* ── Navigation ── */
+document.getElementById('farmPrevBtn').addEventListener('click', function () {
+    cur.setMonth(cur.getMonth() - 1);
+    render();
+});
+document.getElementById('farmNextBtn').addEventListener('click', function () {
+    cur.setMonth(cur.getMonth() + 1);
+    render();
+});
 
-//         empty.classList.add("day");
-
-//         calendarGrid.appendChild(empty);
-//     }
-
-//     for (
-//         let d = 1;
-//         d <= lastDay.getDate();
-//         d++
-//     ) {
-
-//         const day =
-//             document.createElement("div");
-
-//         day.classList.add("day");
-
-//         const dateString =
-//             `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
-
-//         day.innerHTML =
-//             `<div class="day-number">${d}</div>`;
-
-//         events.forEach(event => {
-
-//             if (
-//                 dateString >= event.start &&
-//                 dateString <= event.end
-//             ) {
-
-//                 const eventDiv =
-//                     document.createElement("div");
-
-//                 eventDiv.classList.add("event");
-
-//                 eventDiv.style.background =
-//                     event.color;
-
-//                 eventDiv.textContent =
-//                     event.title;
-
-//                 day.appendChild(eventDiv);
-//             }
-//         });
-
-//         calendarGrid.appendChild(day);
-//     }
-// }
-
-// renderCalendar();
-
-// document
-//     .getElementById("nextMonth")
-//     .addEventListener("click", () => {
-
-//         currentDate.setMonth(
-//             currentDate.getMonth() + 1
-//         );
-
-//         renderCalendar();
-//     });
-
-// document
-//     .getElementById("prevMonth")
-//     .addEventListener("click", () => {
-
-//         currentDate.setMonth(
-//             currentDate.getMonth() - 1
-//         );
-
-//         renderCalendar();
-//     });
+/* ── Init ── */
+render();
+})();

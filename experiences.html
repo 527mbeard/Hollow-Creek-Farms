@@ -44,41 +44,69 @@
     </div>
   </nav>
 
-  <section class="calendar-section">
 
-    <h2 class="calendar-title">Calendar</h2>
-
-    <div class="calendar-wrapper">
-
-      <button class="month-arrow" id="prevMonth">
-        &#8592;
-      </button>
-
-      <div class="calendar-container">
-
-        <div class="weekday-bar">
-
-          <div>MONDAY</div>
-          <div>TUESDAY</div>
-          <div>WEDNESDAY</div>
-          <div>THURSDAY</div>
-          <div>FRIDAY</div>
-          <div>SATURDAY</div>
-          <div>SUNDAY</div>
-
-        </div>
-
-        <div id="calendarGrid"></div>
-
-      </div>
-
-      <button class="month-arrow" id="nextMonth">
-        &#8594;
-      </button>
-
+  <section class="farm-cal">
+    <div class="farm-cal__title">Calendar</div>
+    <div class="farm-cal__month-header">
+      <button class="farm-cal__month-btn" id="farmPrevBtn">&#8249;</button>
+      <span class="farm-cal__month-label" id="farmMonthLabel"></span>
+      <button class="farm-cal__month-btn" id="farmNextBtn">&#8250;</button>
     </div>
 
+    <table class="farm-cal__table" aria-label="Farm event calendar">
+      <thead>
+        <tr>
+          <th scope="col">Monday</th>
+          <th scope="col">Tuesday</th>
+          <th scope="col">Wednesday</th>
+          <th scope="col">Thursday</th>
+          <th scope="col">Friday</th>
+          <th scope="col">Saturday</th>
+          <th scope="col">Sunday</th>
+        </tr>
+      </thead>
+      <tbody id="farmCalBody"></tbody>
+    </table>
+
+    <div class="farm-cal__legend">
+      <div class="farm-cal__legend-item"><span class="farm-cal__legend-dot" style="background:#2d5a27"></span>Planting
+      </div>
+      <div class="farm-cal__legend-item"><span class="farm-cal__legend-dot" style="background:#8b2020"></span>Harvest
+      </div>
+      <div class="farm-cal__legend-item"><span class="farm-cal__legend-dot" style="background:#D4720A"></span>Market
+      </div>
+      <div class="farm-cal__legend-item"><span class="farm-cal__legend-dot" style="background:#1a5a8a"></span>Other
+      </div>
+    </div>
+    <div class="farm-cal__hint">Double-click a day to add an event</div>
   </section>
+
+  <!-- Add / Edit Modal -->
+  <div class="farm-cal-modal-bg" id="farmModalBg" role="dialog" aria-modal="true" aria-labelledby="FarmModalTitle">
+    <div class="farm-cal-modal">
+      <h3 id="FarmModalTitle">Add event</h3>
+
+      <label for="FarmEvName">Event name</label>
+      <input type="text" id="FarmEvName" placeholder="e.g. Plant tomatoes" autocomplete="off" />
+
+      <label for="FarmEvCat">Category</label>
+      <select id="FarmEvCat">
+        <option value="planting">Planting</option>
+        <option value="harvest">Harvest</option>
+        <option value="market">Market day</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="FarmEvNote">Notes</label>
+      <textarea id="FarmEvNote" placeholder="Optional details..."></textarea>
+
+      <div class="farm-cal-modal__actions">
+        <button class="farm-cal-modal__delete" id="FarmDeleteBtn" style="display:none">Delete event</button>
+        <button class="farm-cal-modal__cancel" id="FarmCancelBtn">Cancel</button>
+        <button class="farm-cal-modal__save" id="FarmSaveBtn">Save</button>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
 
@@ -122,10 +150,11 @@
 
   </footer>
 
-  <script src="script.js"></script>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 
 </body>
 
