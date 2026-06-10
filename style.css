@@ -80,6 +80,7 @@ img {
     display: flex;
     gap: 2rem;
     list-style: none;
+    margin-right: 2rem;
 }
 
 .nav-links a {
@@ -107,6 +108,10 @@ img {
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+.nav-links h1 {
+    margin: 0;
 }
 
 .visit-btn {
