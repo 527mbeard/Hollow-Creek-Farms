@@ -1253,3 +1253,164 @@ body {
 .farm-cal__event-chip {
     display: block;
 }
+
+/* =====================================
+   HOLLOW CREEK CONTACT SECTION
+===================================== */
+
+.hc-contact-section {
+    background: var(--red);
+    padding: 80px 5%;
+}
+
+.hc-contact-title {
+    text-align: center;
+    color: var(--cream);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 60px;
+    font-weight: 400;
+}
+
+.hc-contact-title em {
+    font-style: italic;
+}
+
+.hc-contact-top {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+.hc-contact-info h3,
+.hc-contact-details h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: var(--cream);
+    margin-bottom: 15px;
+}
+
+.hc-contact-info p,
+.hc-contact-details p {
+    color: var(--cream);
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.hc-hours-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hc-hours-table td {
+    border: 1px solid rgba(255,255,255,.35);
+    background: #d7aa45;
+    padding: 14px;
+    color: #222;
+    font-size: .95rem;
+}
+
+.hc-social h4 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--cream);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* FORM CARD */
+
+.hc-contact-card {
+    max-width: 800px;
+    margin: auto;
+    background: #f5f1eb;
+    border: 3px solid #d7aa45;
+    padding: 40px;
+}
+
+.hc-contact-card h3 {
+    text-align: center;
+    color: #d7aa45;
+    font-size: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 30px;
+}
+
+.hc-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.hc-contact-form input,
+.hc-contact-form textarea {
+    background: var(--green);
+    border: none;
+    color: white;
+    padding: 22px;
+    font-size: 1.2rem;
+    font-family: inherit;
+}
+
+.hc-contact-form input::placeholder,
+.hc-contact-form textarea::placeholder {
+    color: #d7aa45;
+}
+
+.hc-contact-form textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+
+.hc-contact-form button {
+    align-self: center;
+    background: var(--green);
+    color: #d7aa45;
+    border: none;
+    padding: 18px 70px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: .3s;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.hc-contact-form button:hover {
+    transform: translateY(-3px);
+    background: #173623;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .hc-contact-top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hc-contact-info h3,
+    .hc-contact-details h3 {
+        font-size: 2.4rem;
+    }
+
+    .hc-contact-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hc-contact-title {
+        font-size: 2.5rem;
+    }
+
+    .hc-hours-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .hc-contact-form button {
+        width: 100%;
+    }
+}
