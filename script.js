@@ -90,6 +90,8 @@ filterBtns.forEach(btn => {
 
 //  CALENDAR
 (() => {
+    const calBody = document.getElementById('farmCalBody');
+    if (!calBody) return; // not on the calendar page, skip
     const CATS = {
         planting: { color: '#2d5a27' },
         harvest: { color: '#8b2020' },
@@ -195,213 +197,104 @@ filterBtns.forEach(btn => {
 
 const collection = [
     {
-        product: "The Gray Man",
-        category: "Action",
-        note: 5,
-        description: 2022,
-        image: "grayman.jpg",
-        featured: true
+        product: "Apple Pie",
+        category: "Spring",
+        price: 8.99,
+        description: "Fresh orchard apples baked in a flaky golden crust served warm with seasonal spices.",
+        image: "images/apple-pie.jpg"
     },
-    {
-        product: "The Gray Man",
-        category: "Action",
-        note: 5,
-        description: 2022,
-        image: "grayman.jpg",
-        featured: true
-    },
-    {
-        product: "The Gray Man",
-        category: "Action",
-        note: 5,
-        description: 2022,
-        image: "grayman.jpg",
-        featured: true
 
-    },
     {
-        product: "The Gray Man",
-        category: "Action",
-        note: 5,
-        description: 2022,
-        image: "grayman.jpg",
-        featured: true
+        product: "Strawberry Shortcake",
+        category: "Spring",
+        price: 7.99,
+        description: "Sweet strawberries layered with cream and homemade biscuits.",
+        image: "images/strawberry-shortcake.jpg"
+    },
 
-    },
     {
-        product: "The Gray Man",
-        category: "Action",
-        note: 5,
-        description: 2022,
-        image: "grayman.jpg",
-        featured: true
+        product: "Peach Cobbler",
+        category: "Summer",
+        price: 8.49,
+        description: "Juicy peaches baked beneath a buttery cobbler topping.",
+        image: "images/peach-cobbler.jpg"
     },
+
     {
-        product: "The Gray Man",
-        category: "Action",
-        note: 5,
-        description: 2022,
-        image: "grayman.jpg",
-        featured: true
-    },
-    {
-        product: "The Gray Man",
-        category: "Action",
-        note: 5,
-        description: 2022,
-        image: "grayman.jpg",
-        featured: true
-    },
-    {
-        product: "The Gray Man",
-        category: "Action",
-        note: 5,
-        description: 2022,
-        image: "grayman.jpg",
-        featured: true
-    },
-    {
-        product: "The Gray Man",
-        category: "Action",
-        note: 5,
-        description: 2022,
-        image: "grayman.jpg",
-        featured: true
-    },
-    {
-        product: "The Gray Man",
-        category: "Action",
-        note: 5,
-        description: 2022,
-        image: "grayman.jpg",
-        featured: true
-    },
+        product: "Pumpkin Pie",
+        category: "Autumn",
+        price: 9.49,
+        description: "Rich pumpkin filling made from farm-grown pumpkins.",
+        image: "images/pumpkin-pie.jpg"
+    }
 ];
 
 console.log(collection[0]);
 
-const movieGrid = document.getElementById("movieGrid");
-
-const modal = document.getElementById("movieModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalDesc = document.getElementById("modalDesc");
-const modalExtra = document.getElementById("modalExtra");
-const closeModal = document.getElementById("closeModal");
-
-let currentFilter = "All";
+const productGrid = document.getElementById("productGrid");
 
 function render(list) {
-    movieGrid.innerHTML = "";
 
-    list.forEach((movie) => {
-        let badgeColor = "";
-        if (movie.rating >= 4.5) {
-            badgeColor = "gold";
-        } else {
-            badgeColor = "white";
-        }
+    productGrid.innerHTML = "";
 
-        let featuredBadge = "";
-
-        if (movie.featured === true) {
-            featuredBadge = `
-        <span class="featured-badge">
-            ⭐ Favorite
-        </span>
-    `;
-        }
-
-        const col = document.createElement("div");
-        col.className = "col-12 col-sm-6 col-lg-3 d-flex justify-content-center";
+    list.forEach((item) => {
 
         const card = document.createElement("div");
-        // card.classList.add("movie-card");
 
         card.innerHTML = `
-                    <div class="movie-card">
-            <div class="poster-wrapper">
-                <img src="${movie.image}" class="movie-poster">
-            </div>
+            <article class="season-card" data-season="${item.category.toLowerCase()}">
 
-            <div class="movie-info">
-
-                <div class="top-row">
-                    <span class="genre-tag">${movie.genre}</span> 
-                    <span class="rating" style="color:${badgeColor}">
-                        ⭐ ${movie.rating}
-                    </span>
+                <div class="season-card-image">
+                    <img src="${item.image}" alt="${item.product}">
                 </div>
 
-                <h2 class="movie-title">${movie.title}</h2>
-               
+                <h3>${item.product}</h3>
 
-                <p class="movie-description">${movie.description}</p>
-                 ${featuredBadge}
+                <h4>$${item.price.toFixed(2)}</h4>
 
-                <div class="bottom-row">
-                    <span class="movie-year">${movie.year}</span>
-                    <button class="view-btn">View Details</button>
-                </div>
-                </div>
+                <p>
+                    ${item.description}
+                </p>
 
-            </div>
+                <a href="#" class="learn-more">
+                    Learn More <span>➜</span>
+                </a>
+
+            </article>
         `;
 
-        card.querySelector(".view-btn").addEventListener("click", () => {
-            modalTitle.textContent = movie.title;
-            modalDesc.textContent = movie.description;
-            modalExtra.textContent = `Director: ${movie.director} | Runtime: ${movie.runtime}`;
+        productGrid.appendChild(card);
 
-            modal.classList.remove("hidden");
-        });
-
-        col.appendChild(card);
-        movieGrid.appendChild(col);
     });
+
 }
 
 function filterMovies(category) {
-    if (category === "All") {
+    if (category === "all") {
         render(collection);
     } else {
-        const filtered = collection.filter((movie) => movie.genre === category);
+        const filtered = collection.filter(
+            item => item.category.toLowerCase() === category
+        );
+
         render(filtered);
     }
 }
 
-document.querySelectorAll(".sort-option").forEach(option => {
-    option.addEventListener("click", () => {
+document.querySelectorAll(".season-btn").forEach((btn) => {
 
-        const sortType = option.dataset.sort;
-
-        let sortedMovies = [...collection];
-
-        if (sortType === "rating") {
-            sortedMovies.sort((a, b) => b.rating - a.rating);
-        }
-
-        else if (sortType === "alphabetical") {
-            sortedMovies.sort((a, b) =>
-                a.title.localeCompare(b.title)
-            );
-        }
-
-        else if (sortType === "random") {
-            sortedMovies.sort(() => Math.random() - 0.5);
-        }
-
-        render(sortedMovies);
-    });
-});
-
-document.querySelectorAll(".genre-filter").forEach((btn) => {
     btn.addEventListener("click", () => {
-        filterMovies(btn.dataset.filter);
-    });
-});
 
-closeModal.addEventListener("click", () => {
-    modal.classList.add("hidden");
+        document.querySelectorAll(".season-btn").forEach(b =>
+            b.classList.remove("active")
+        );
+
+        btn.classList.add("active");
+
+        filterMovies(btn.dataset.season);
+
+    });
+
 });
 
 render(collection);
