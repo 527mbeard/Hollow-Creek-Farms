@@ -197,35 +197,77 @@ filterBtns.forEach(btn => {
 
 const collection = [
     {
-        product: "Apple Pie",
+        product: "Fresh Eggs",
         category: "Spring",
-        price: 8.99,
-        description: "Fresh orchard apples baked in a flaky golden crust served warm with seasonal spices.",
-        image: "images/apple-pie.jpg"
+        price: 4.50,
+        description: "Farm-fresh eggs available year-round. (From the 200-hen flock)",
+        image: "images/eggs.png"
     },
 
     {
-        product: "Strawberry Shortcake",
-        category: "Spring",
-        price: 7.99,
-        description: "Sweet strawberries layered with cream and homemade biscuits.",
-        image: "images/strawberry-shortcake.jpg"
+        product: "Raw Honey",
+        category: "Summer",
+        price: 9.99,
+        description: "Local raw honey from three on-site hives. (From farm hives)",
+        image: "images/raw-honey.png"
     },
 
     {
-        product: "Peach Cobbler",
+        product: "Strawberry Preserves",
         category: "Summer",
         price: 8.49,
-        description: "Juicy peaches baked beneath a buttery cobbler topping.",
-        image: "images/peach-cobbler.jpg"
+        description: "Preserves made with seasonal berries. (Made in-house)",
+        image: "images/strawberry-jar.png"
     },
 
     {
-        product: "Pumpkin Pie",
+        product: "Blueberry Preserves",
+        category: "Summer",
+        price: 8.49,
+        description: "Small-batch preserves from peak berry season. (Made in-house)",
+        image: "images/blueberry-jar.png"
+    },
+    {
+        product: "Fresh Apple Cider",
+        category: "Winter",
+        price: 8.99,
+        description: "Fresh cider pressed on-site, sold by the jug. (Available in fall)",
+        image: "images/apple-cider.png"
+    },
+    {
+        product: "Sourdough Bread",
         category: "Autumn",
-        price: 9.49,
-        description: "Rich pumpkin filling made from farm-grown pumpkins.",
-        image: "images/pumpkin-pie.jpg"
+        price: 6.99,
+        description: "Fresh-baked bread available on weekends.(Weekends Only)",
+        image: "images/sourbread.png"
+    },
+    {
+        product: "Apple Pie",
+        category: "Autumn",
+        price: 17.99,
+        description: "Fresh-baked pie using seasonal apples.(Weekends Only)",
+        image: "images/apple-pie.png"
+    },
+    {
+        product: "Seasonal Produce Basket",
+        category: "Winter",
+        price: 24.99,
+        description: "A rotating selection from the farm fields. (Changes by Season)",
+        image: "images/produce.png"
+    },
+    {
+        product: "Beeswax Candles",
+        category: "Winter",
+        price: 11.99,
+        description: "Handmade candles from Hollow Creek beeswax. (From farm hives)",
+        image: "images/candle.png"
+    },
+    {
+        product: "Branded Tote Bag",
+        category: "Winter",
+        price: 14.99,
+        description: "Reusable tote featuring the farm brand. (HCF Merch)",
+        image: "images/tote.png"
     }
 ];
 
