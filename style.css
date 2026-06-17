@@ -1,3 +1,7 @@
+html{
+    overflow-y:scroll;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -245,6 +249,7 @@ img {
     padding: 6rem 5%;
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('images/wheatback.png') center/cover;
 }
+/* Image credit: Provided Hollow Creek Farm asset folder. Licensed for class use. */
 
 .menu-grid {
     display: grid;
@@ -258,6 +263,7 @@ img {
     background: url('images/family-apples.png') center/cover;
     border: 4px solid #d6aa44;
 }
+/* Image credit: Provided Hollow Creek Farm asset folder. Licensed for class use. */
 
 .menu-title {
     background: var(--green);
@@ -393,6 +399,7 @@ img {
         /* linear-gradient(rgba(255,255,255,0.82),rgba(255,255,255,0.82)), */
         url('images/leafy-background.png') center/cover;
 }
+/* Image credit: Provided Hollow Creek Farm asset folder. Licensed for class use. */
 
 .story-body {
     background: #f6f0e6;
@@ -428,6 +435,7 @@ img {
     background: url('images/family-apples.png') center/cover;
     border: 4px solid #d6aa44;
 }
+/* Image credit: Provided Hollow Creek Farm asset folder. Licensed for class use. */
 
 .story-content h2 {
     font-size: 4rem;
@@ -584,25 +592,6 @@ body {
 }
 
 /* ======================
-   ARROWS
-====================== */
-
-.arrow {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #1d3f1f;
-    font-size: 4rem;
-    font-weight: bold;
-    padding: 10px;
-    z-index: 10;
-}
-
-.arrow:hover {
-    transform: scale(1.1);
-}
-
-/* ======================
    RESPONSIVE
 ====================== */
 
@@ -715,7 +704,7 @@ body {
     .menu-cards,
     .event-cards,
     .product-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .hero-left h1 {
@@ -779,6 +768,7 @@ body {
     background-size: cover;
     background-position: center;
 }
+/* Image credit: Provided Hollow Creek Farm asset folder. Licensed for class use. */
 
 .section-title {
     display: inline-block;
@@ -1420,17 +1410,22 @@ body {
 ================================== */
 
 .seasonal-menu {
-    padding: 6rem 5%;
-    background:
-        url("images/picnic-background.png") center/cover;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 6rem 0 3rem;
+    background: url("images/picnic-background.png") center/cover;
 }
+/* Image credit: Provided Hollow Creek Farm asset folder. Licensed for class use. */
 
 .seasonal-header {
-    display: grid;
-    grid-template-columns: 1.1fr 1.8fr;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
     align-items: stretch;
+    gap: 1rem;
+    margin: 0 auto 3rem;
+    width: min(100%, 1600px);
+    padding: 0 5%;
+    box-sizing: border-box;
 }
 
 .season-title-box {
@@ -1439,18 +1434,25 @@ body {
     padding: 1.5rem;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .season-title-box h2 {
-    font-size: clamp(4rem, 6vw, 6rem);
+    font-size: clamp(3rem, 4vw, 5rem);
     line-height: .9;
     font-weight: 400;
+    margin: 0;
 }
 
 .season-filters {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
 }
 
 .season-btn {
@@ -1458,10 +1460,19 @@ body {
     background: var(--red);
     color: white;
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 4rem);
-    padding: 1.5rem;
+    font-size: clamp(1.4rem, 1.1vw, 1.8rem);
     cursor: pointer;
     transition: .35s;
+    padding: 12px 22px;
+    white-space: normal;
+    text-align: center;
+    overflow-wrap: anywhere;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 160px;
+    min-width: 120px;
+    min-height: 70px;
 }
 
 .season-btn:hover {
@@ -1473,7 +1484,8 @@ body {
 }
 
 .season-btn:first-child {
-    grid-column: span 2;
+    flex: 0 0 auto;
+    min-width: 140px;
 }
 
 /* Cards */
@@ -1552,18 +1564,30 @@ body {
     }
 
     .seasonal-header {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .season-filters {
+        justify-content: flex-start;
     }
 }
 
 @media (max-width: 700px) {
 
-    .season-filters {
-        grid-template-columns: 1fr;
+    .seasonal-header {
+        flex-direction: column;
+        align-items: stretch;
     }
 
-    .season-btn:first-child {
-        grid-column: span 1;
+    .season-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .season-btn {
+        width: 100%;
+        flex: 1 1 auto;
     }
 
     .season-cards {

@@ -59,33 +59,129 @@ document.querySelectorAll('.menu-card').forEach(card => {
     }
 });
 
-/* FILTER BUTTONS */
+const eventItems = [
+    {
+        title: 'Strawberry Picking',
+        season: 'spring',
+        date: 'April-June (Weekends)',
+        description: 'Pick fresh strawberries during U-Pick weekends.',
+        classes: 'red'
+    },
+    {
+        title: 'Baby Animal Visits',
+        season: 'spring',
+        date: 'April-June',
+        description: 'Meet chicks, ducklings, and baby goats in the barn.',
+        classes: 'red'
+    },
+    {
+        title: 'Sunflower U-Pick',
+        season: 'spring',
+        date: 'Mid-May-June (first bloom)',
+        description: 'Walk the rows and cut your own bouquet.',
+        classes: 'red'
+    },
+    {
+        title: 'Blueberry Picking',
+        season: 'summer',
+        date: 'July-Early August',
+        description: 'Visit the berry fields and pick fresh blueberries.'
+    },
+    {
+        title: 'Sunflower U-Pick',
+        season: 'summer',
+        date: 'Late July (second bloom)',
+        description: 'Enjoy a second sunflower bloom and create your own bouquet.'
+    },
+    {
+        title: 'Farm-to-Table Dinner',
+        season: 'summer',
+        date: 'Select Saturday evenings',
+        description: 'Enjoy a seasonal dinner featuring local farm ingredients.'
+    },
+    {
+        title: 'Pumpkin Patch',
+        season: 'autumn',
+        date: 'September–November',
+        description: 'Choose from more than 20 pumpkin varieties.'
+    },
+    {
+        title: 'Corn Maze',
+        season: 'autumn',
+        date: 'Labor Day–November',
+        description: 'Explore a 5-acre maze featuring a new design each year.'
+    },
+    {
+        title: 'Hayrides',
+        season: 'autumn',
+        date: 'Weekends through October',
+        description: 'Take a tractor-pulled wagon ride around the farm.'
+    },
+    {
+        title: 'Apple Cider Pressing',
+        season: 'autumn',
+        date: 'September–November',
+        description: 'Watch fresh cider being made and take a jug home.'
+    },
+    {
+        title: 'Fall Harvest Festival',
+        season: 'autumn',
+        date: 'Last two weekends of October',
+        description: 'Food vendors, live music, crafts, and family farm fun.'
+    },
+    {
+        title: 'Holiday Market',
+        season: 'winter',
+        date: 'First three weekends of December',
+        description: 'Shop artisan goods, farm gifts, wreaths, and seasonal decorations.'
+    }
+];
 
-const filterBtns = document.querySelectorAll('.filter-btn');
-const cards = document.querySelectorAll('.event-card');
+function renderEventCards(items) {
+    const eventCardsContainer = document.querySelector('.event-cards');
+    if (!eventCardsContainer) return;
 
-filterBtns.forEach(btn => {
+    eventCardsContainer.innerHTML = '';
 
-    btn.addEventListener('click', () => {
-
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-
-        cards.forEach(card => {
-
-            if (filter === 'all' || card.dataset.season === filter) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-
-        });
-
+    items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = `event-card fade-up${item.classes ? ' ' + item.classes : ''}`;
+        card.dataset.season = item.season;
+        card.innerHTML = `
+            <h3>${item.title}</h3>
+            <b><p>${item.date}</p></b>
+            <p>${item.description}</p>
+            <a href="#">LEARN MORE →</a>
+        `;
+        eventCardsContainer.appendChild(card);
+        observer.observe(card);
     });
+}
 
-});
+function initEventFilters() {
+    const eventCardsContainer = document.querySelector('.event-cards');
+    if (!eventCardsContainer) return;
+
+    renderEventCards(eventItems);
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.event-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            cards.forEach(card => {
+                card.style.display = filter === 'all' || card.dataset.season === filter ? 'block' : 'none';
+            });
+        });
+    });
+}
+
+initEventFilters();
 
 
 //  CALENDAR
@@ -281,9 +377,10 @@ function render(list) {
 
     list.forEach((item) => {
 
-        const card = document.createElement("div");
+        const col = document.createElement("div");
+        col.className = "col-12 col-md-6 col-lg-4";
 
-        card.innerHTML = `
+        col.innerHTML = `
             <article class="season-card" data-season="${item.category.toLowerCase()}">
 
                 <div class="season-card-image">
@@ -305,7 +402,7 @@ function render(list) {
             </article>
         `;
 
-        productGrid.appendChild(card);
+        productGrid.appendChild(col);
 
     });
 
@@ -338,5 +435,18 @@ document.querySelectorAll(".season-btn").forEach((btn) => {
     });
 
 });
+
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', event => {
+        event.preventDefault();
+        contactForm.reset();
+        const modalEl = document.getElementById('thankYouModal');
+        if (modalEl && window.bootstrap && typeof window.bootstrap.Modal === 'function') {
+            const modal = new window.bootstrap.Modal(modalEl);
+            modal.show();
+        }
+    });
+}
 
 render(collection);
